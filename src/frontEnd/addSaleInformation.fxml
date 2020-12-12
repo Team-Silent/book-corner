@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <GridPane alignment="center" hgap="10" prefHeight="768.0" prefWidth="1240.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
@@ -21,43 +22,42 @@
       <RowConstraints />
       <RowConstraints />
    </rowConstraints>
-   <children>
-      <Pane prefHeight="745.0" prefWidth="1257.0" GridPane.rowIndex="2">
+   <Pane prefHeight="745.0" prefWidth="1257.0" GridPane.rowIndex="2">
+      <TextArea layoutX="458.0" layoutY="123.0" prefHeight="38.0" prefWidth="378.0" />
+      <Text layoutX="341.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name" wrappingWidth="116.0625" />
+      <TextArea layoutX="458.0" layoutY="166.0" prefHeight="38.0" prefWidth="378.0" />
+      <Text layoutX="341.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." wrappingWidth="116.0625" />
+      <Text layoutX="341.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="116.0625" />
+      <TextArea layoutX="458.0" layoutY="212.0" prefHeight="38.0" prefWidth="378.0" />
+      <TableView layoutX="341.0" layoutY="465.0" prefHeight="63.0" prefWidth="544.0">
+         <columns>
+            <TableColumn prefWidth="179.20001983642578" text="Name" />
+            <TableColumn prefWidth="161.5999755859375" text="Author" />
+            <TableColumn prefWidth="65.5999755859375" text="Quantity" />
+            <TableColumn prefWidth="63.999969482421875" text="Price" />
+            <TableColumn prefWidth="76.0" text="Counted" />
+         </columns>
+      </TableView>
+      <Group layoutX="380.0" layoutY="283.0">
          <children>
-            <TextArea layoutX="461.0" layoutY="184.0" prefHeight="38.0" prefWidth="378.0" />
-            <Text layoutX="344.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name" wrappingWidth="116.0625" />
-            <TextArea layoutX="461.0" layoutY="227.0" prefHeight="38.0" prefWidth="378.0" />
-            <Text layoutX="344.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." wrappingWidth="116.0625" />
-            <Text layoutX="344.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="116.0625" />
-            <TextArea layoutX="461.0" layoutY="273.0" prefHeight="38.0" prefWidth="378.0" />
-            <TableView layoutX="344.0" layoutY="526.0" prefHeight="63.0" prefWidth="544.0">
-              <columns>
-                <TableColumn prefWidth="179.20001983642578" text="Name" />
-                <TableColumn prefWidth="161.5999755859375" text="Author" />
-                  <TableColumn prefWidth="65.5999755859375" text="Quantity" />
-                  <TableColumn prefWidth="63.999969482421875" text="Price" />
-                  <TableColumn prefWidth="76.0" text="Counted" />
-              </columns>
-            </TableView>
-            <Group layoutX="383.0" layoutY="344.0">
+            <Pane layoutX="-40.0" prefHeight="127.0" prefWidth="534.0">
                <children>
-                  <Pane layoutX="-40.0" prefHeight="127.0" prefWidth="534.0">
-                     <children>
-                        <Text layoutX="251.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book" />
-                        <Text layoutX="38.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                        <Button layoutX="258.0" layoutY="75.0" mnemonicParsing="false" text="Add" />
-                        <ComboBox layoutX="94.0" layoutY="35.0" prefHeight="25.0" prefWidth="404.0" />
-                     </children>
-                  </Pane>
+                  <Text layoutX="251.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book" />
+                  <Text layoutX="38.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                  <Button layoutX="258.0" layoutY="75.0" mnemonicParsing="false" text="Add" />
+                  <ComboBox layoutX="94.0" layoutY="35.0" prefHeight="25.0" prefWidth="404.0" />
                </children>
-            </Group>
-            <Text layoutX="754.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
-            <Text layoutX="806.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
-            <Text layoutX="838.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taka" />
-            <Button layoutX="722.0" layoutY="665.0" mnemonicParsing="false" text="Save and Generate Cash Memo" />
-            <Text layoutX="569.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information Fillup" />
-            <Button layoutX="681.0" layoutY="665.0" mnemonicParsing="false" text="Save" />
+            </Pane>
          </children>
-      </Pane>
-   </children>
+      </Group>
+      <Text layoutX="751.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
+      <Text layoutX="803.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
+      <Text layoutX="835.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taka" />
+      <Button layoutX="694.0" layoutY="624.0" mnemonicParsing="false" text="Save and Generate Cash Memo" />
+      <Text layoutX="522.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information Fillup">
+         <font>
+            <Font size="25.0" />
+         </font></Text>
+      <Button layoutX="647.0" layoutY="624.0" mnemonicParsing="false" text="Save" />
+   </Pane>
 </GridPane>
