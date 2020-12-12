@@ -59,6 +59,5 @@
             <Font size="25.0" />
          </font></Text>
       <Button layoutX="647.0" layoutY="624.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="340.0" layoutY="624.0" mnemonicParsing="false" text="Back" />
    </Pane>
 </GridPane>
