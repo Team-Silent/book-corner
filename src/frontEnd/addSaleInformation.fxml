@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" hgap="10" prefHeight="768.0" prefWidth="1240.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="768.0" prefWidth="1240.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SaleInfoController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -30,12 +30,21 @@
    <children>
       <Pane prefHeight="745.0" prefWidth="1257.0" GridPane.rowIndex="2">
          <children>
-            <TextArea layoutX="458.0" layoutY="123.0" prefHeight="38.0" prefWidth="378.0" />
+            <TextArea layoutX="458.0" layoutY="123.0" prefHeight="38.0" prefWidth="378.0">
+               <font>
+                  <Font size="20.0" />
+               </font></TextArea>
             <Text layoutX="341.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name" wrappingWidth="116.0625" />
-            <TextArea layoutX="458.0" layoutY="166.0" prefHeight="38.0" prefWidth="378.0" />
+            <TextArea layoutX="458.0" layoutY="166.0" prefHeight="38.0" prefWidth="378.0">
+               <font>
+                  <Font size="20.0" />
+               </font></TextArea>
             <Text layoutX="341.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." wrappingWidth="116.0625" />
             <Text layoutX="341.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="116.0625" />
-            <TextArea layoutX="458.0" layoutY="212.0" prefHeight="38.0" prefWidth="378.0" />
+            <TextArea layoutX="458.0" layoutY="212.0" prefHeight="38.0" prefWidth="378.0">
+               <font>
+                  <Font size="20.0" />
+               </font></TextArea>
             <TableView layoutX="187.0" layoutY="465.0" prefHeight="87.0" prefWidth="859.0">
                <columns>
                   <TableColumn prefWidth="179.20001983642578" text="Book Name" />
@@ -62,7 +71,7 @@
                </children>
             </Group>
             <Text layoutX="836.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Button layoutX="910.0" layoutY="644.0" mnemonicParsing="false" text="Save and Generate Cash Memo">
+            <Button layoutX="962.0" layoutY="644.0" mnemonicParsing="false" onAction="#cashMemoScene" text="Generate Cash Memo">
                <font>
                   <Font size="18.0" />
                </font>
@@ -72,12 +81,12 @@
                   <Font size="31.0" />
                </font>
             </Text>
-            <Button layoutX="844.0" layoutY="644.0" mnemonicParsing="false" text="Save">
+            <Button layoutX="887.0" layoutY="644.0" mnemonicParsing="false" text="Save">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" text="Back" />
+            <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" onAction="#backToHome" text="Back" />
          </children>
       </Pane>
    </children>
