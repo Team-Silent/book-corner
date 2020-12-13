@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="768.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="768.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.CashMemoController">
    <children>
       <Label alignment="CENTER" layoutX="517.0" layoutY="14.0" prefHeight="36.0" prefWidth="206.0" text="Invoice">
          <font>
@@ -115,5 +114,6 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Button layoutX="14.0" layoutY="728.0" mnemonicParsing="false" onAction="#backToHome" text="Back" />
    </children>
 </AnchorPane>
