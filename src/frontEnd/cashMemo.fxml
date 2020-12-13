@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="768.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="517.0" layoutY="14.0" prefHeight="36.0" prefWidth="206.0" text="Invoice">
+         <font>
+            <Font name="System Bold" size="44.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="111.0" prefHeight="41.0" prefWidth="169.0" text="Billed to">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="cust_name" layoutX="98.0" layoutY="169.0" prefHeight="35.0" prefWidth="227.0" text="Akbar Ali">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="cust_add" layoutX="98.0" layoutY="204.0" prefHeight="35.0" prefWidth="257.0" text="11/2 Baker street,Dhaka">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="543.0" layoutY="114.0" prefHeight="32.0" prefWidth="154.0" text="Invoice number">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="invoiceNumber" layoutX="543.0" layoutY="146.0" prefHeight="28.0" prefWidth="131.0" text="1111111">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="543.0" layoutY="188.0" prefHeight="32.0" prefWidth="154.0" text="Date of Issue">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="issueDate" layoutX="540.0" layoutY="225.0" prefHeight="28.0" prefWidth="137.0" text="10-12-2020">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="958.0" layoutY="92.0" text="Invoice Total">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="invoiceTotal" layoutX="958.0" layoutY="153.0" text="2500">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="1104.0" layoutY="172.0" text="Taka">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="98.0" layoutY="300.0" prefWidth="1080.0" />
+      <TableView layoutX="79.0" layoutY="327.0" prefHeight="407.0" prefWidth="888.0">
+        <columns>
+          <TableColumn fx:id="sl" prefWidth="87.0" text="SL  No." />
+          <TableColumn fx:id="bookList" prefWidth="320.0" text="Book List" />
+            <TableColumn fx:id="price" prefWidth="197.0" text="Price" />
+            <TableColumn fx:id="quantity" prefWidth="112.0" text="Quantity" />
+            <TableColumn fx:id="amount" prefWidth="176.0" text="Amount" />
+        </columns>
+      </TableView>
+      <Label layoutX="1003.0" layoutY="342.0" prefHeight="32.0" prefWidth="68.0" text="Total :">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="1086.0" layoutY="342.0" prefHeight="21.0" prefWidth="82.0" text="2500">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="1003.0" layoutY="402.0" prefHeight="32.0" prefWidth="68.0" text="Paid :">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="paid" layoutX="1086.0" layoutY="396.0" prefHeight="44.0" prefWidth="108.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="due" layoutX="1086.0" layoutY="459.0" prefHeight="44.0" prefWidth="108.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1003.0" layoutY="465.0" prefHeight="32.0" prefWidth="68.0" text="Due :">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="save" layoutX="1069.0" layoutY="689.0" mnemonicParsing="false" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="1150.0" layoutY="689.0" mnemonicParsing="false" text="Print">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
