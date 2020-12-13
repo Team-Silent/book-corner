@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="768.0" prefWidth="1240.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="745.0" prefWidth="1257.0" GridPane.rowIndex="2">
+            <children>
+                <TextArea layoutX="458.0" layoutY="123.0" prefHeight="38.0" prefWidth="378.0" />
+                <Text layoutX="341.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Title" wrappingWidth="116.0625" />
+                <TextArea layoutX="458.0" layoutY="166.0" prefHeight="38.0" prefWidth="378.0" />
+                <Text layoutX="341.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" wrappingWidth="116.0625" />
+                <Text layoutX="341.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Purchese Price" wrappingWidth="116.0625" />
+                <TextArea layoutX="458.0" layoutY="212.0" prefHeight="38.0" prefWidth="378.0" />
+                <Group layoutX="380.0" layoutY="283.0" />
+                <Text layoutX="836.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                <Text layoutX="529.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Information" wrappingWidth="247.0556640625">
+                    <font>
+                        <Font size="31.0" />
+                    </font>
+                </Text>
+                <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" text="Back" />
+            <Button layoutX="588.0" layoutY="357.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" text="Add">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextArea layoutX="458.0" layoutY="257.0" prefHeight="38.0" prefWidth="378.0" />
+            <Text layoutX="341.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selling Price" wrappingWidth="116.0625" />
+            <TextArea layoutX="458.0" layoutY="302.0" prefHeight="38.0" prefWidth="378.0" />
+            <Text layoutX="341.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" wrappingWidth="116.0625" />
+            </children>
+        </Pane>
+    </children>
+</GridPane>
