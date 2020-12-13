@@ -25,7 +25,7 @@
                 <TextArea layoutX="458.0" layoutY="212.0" prefHeight="38.0" prefWidth="378.0" />
                 <Group layoutX="380.0" layoutY="283.0" />
                 <Text layoutX="836.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text layoutX="485.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Book Information" wrappingWidth="247.0556640625">
+                <Text layoutX="485.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Book" wrappingWidth="247.0556640625">
                     <font>
                         <Font size="31.0" />
                     </font>
