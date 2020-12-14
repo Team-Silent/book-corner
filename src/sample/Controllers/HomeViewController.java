@@ -10,8 +10,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HomeViewController {
-    public void addBookScene(ActionEvent actionEvent) {
+    public void addBookScene(ActionEvent actionEvent) throws IOException {
+        Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/newBook.fxml"));
+        Scene scene=new Scene(saleReportView);
 
+        Stage window =(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
     }
 
     public void saleInfoScene(ActionEvent actionEvent) throws IOException {
