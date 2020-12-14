@@ -34,7 +34,6 @@
                         <Font size="31.0" />
                     </font>
                 </Text>
-                <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" onAction="#backToHome" text="Back" />
                 <Button layoutX="615.0" layoutY="257.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="84.0" text="LogIn">
                     <font>
                         <Font size="17.0" />
