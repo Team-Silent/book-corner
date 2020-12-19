@@ -2,7 +2,7 @@
    Book_Id varchar2(10),
    Title varchar2(50),
    Author varchar2(30),
-   Purchese_price number(10,3),
+   Purchase_price number(10,3),
    Selling_Price number(10,3),
    Stock int,
    PRIMARY KEY (Book_Id)
