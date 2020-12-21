@@ -1,7 +1,10 @@
 
-CREATE OR REPLACE PROCEDURE insertBook(title varchar2(128),author varchar2(128),purchase_price number(10,3),
-                            selling_Price number(10,3),quantity int)
-
+CREATE OR REPLACE PROCEDURE insertBook(
+                        title varchar2,
+                        author varchar2,
+                        purchase_price number,
+                        selling_Price number,
+                        quantity int)
     IS
     cnt_title int;
     v_stock int;
