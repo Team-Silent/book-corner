@@ -1,9 +1,9 @@
 CREATE OR REPLACE PROCEDURE insertBook(
-                        p_title varchar2,
-                        p_author varchar2,
-                        p_purchase_price number,
-                        p_selling_Price number,
-                        p_quantity int)
+                        p_title BOOKS.TITLE%TYPE,
+                        p_author BOOKS.AUTHOR%TYPE,
+                        p_purchase_price BOOKS.PURCHASE_PRICE%TYPE,
+                        p_selling_Price BOOKS.SELLING_PRICE%TYPE,
+                        p_quantity BOOKS.STOCK%TYPE)
     IS
 
     found_stock int;

@@ -1,8 +1,9 @@
 create or replace procedure buy(
-                            p_customer_id varchar2,
-                            p_book_id varchar2,
-                            p_quantity integer
+                            p_book_id BOOK_CUSTOMER_JUNCTION.BOOK_ID%TYPE,
+                            p_customer_id BOOK_CUSTOMER_JUNCTION.CUSTOMER_ID%TYPE,
+                            p_quantity BOOK_CUSTOMER_JUNCTION.QUANTITY%TYPE
                             )
+
 IS
 
     found int := 1;
