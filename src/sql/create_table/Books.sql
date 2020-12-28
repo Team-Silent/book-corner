@@ -7,3 +7,4 @@
    Stock int,
    PRIMARY KEY (Book_Id)
    );
+
