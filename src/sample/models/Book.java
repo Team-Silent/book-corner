@@ -19,7 +19,7 @@ public class Book extends Model implements Updatable{
 
     @Override
     public void update() {
-        databaseConnection.runProcedure("insertBook +("+
+        databaseConnection.runProcedure("insertBook("+
                 this.bookID+","+
                 this.title+","+
                 this.author+","+
