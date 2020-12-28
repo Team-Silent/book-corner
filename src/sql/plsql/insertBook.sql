@@ -1,24 +1,26 @@
-
 CREATE OR REPLACE PROCEDURE insertBook(
-                        title varchar2,
-                        author varchar2,
-                        purchase_price number,
-                        selling_Price number,
-                        quantity int)
+                        p_title varchar2,
+                        p_author varchar2,
+                        p_purchase_price number,
+                        p_selling_Price number,
+                        p_quantity int)
     IS
-    cnt_title int;
-    v_stock int;
-    v_id varchar2(256);
-BEGIN
-    select COUNT(Title),Stock INTO cnt_title,v_stock
-    FROM Books
-    Where Title=title AND Author=author;
 
-    IF cnt_title=1 THEN
-        UPDATE Books set Stock=v_stock+quantity WHERE Title=title AND Author=author;
+    found_stock int;
+    found int;
+    v_id varchar2(256):=p_title||p_author;
+
+BEGIN
+    select case
+               when exists(select 1 from BOOKS where BOOK_ID = v_id) then 1
+               else  0
+               end into found from DUAL;
+
+    IF found=1 THEN
+        select STOCK into found_stock from BOOKS where BOOK_ID = v_id;
+        UPDATE Books set Stock=found_stock+p_quantity WHERE BOOK_ID = v_id;
     ELSE
-        v_id := CONCAT (title,author);
-        INSERT INTO Books VALUES(v_id,title,author,purchase_price,selling_Price,quantity);
+        INSERT INTO Books VALUES(v_id,p_title,p_author,p_purchase_price,p_selling_Price,p_quantity);
     END IF;
 END;
 /

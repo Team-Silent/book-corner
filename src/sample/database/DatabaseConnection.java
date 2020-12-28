@@ -40,11 +40,13 @@ public class DatabaseConnection {
     }
 
 
-    public void runProcedure(String procedureName ){
+    public void runProcedure(String procedure ){
+        String toRun = "Begin " + procedure +"; end;";
+        System.out.println(toRun);
         connect();
         try {
             statement = connection.createStatement();
-            statement.execute("exec " + procedureName + "; \n end/");
+            statement.execute(toRun);
         }
         catch (Exception e){
             e.printStackTrace();

@@ -1,15 +1,13 @@
 package sample.models;
 
 public class Book extends Model implements Updatable{
-    String bookID;
     String title;
     String author;
     int purchasingPrice;
     int sellingPrice;
     int stock;
 
-    public Book(String bookID, String title, String author, int purchasingPrice, int sellingPrice, int stock) {
-        this.bookID = bookID;
+    public Book(String title, String author, int purchasingPrice, int sellingPrice, int stock) {
         this.title = title;
         this.author = author;
         this.purchasingPrice = purchasingPrice;
@@ -20,9 +18,8 @@ public class Book extends Model implements Updatable{
     @Override
     public void update() {
         databaseConnection.runProcedure("insertBook("+
-                this.bookID+","+
-                this.title+","+
-                this.author+","+
+                "'"+this.title+"'"+","+
+                "'"+this.author+"'"+","+
                 this.purchasingPrice+","+
                 this.sellingPrice+","+
                 this.stock+
