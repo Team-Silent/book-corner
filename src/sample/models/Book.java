@@ -1,6 +1,6 @@
 package sample.models;
 
-public class Book implements DatabaseExecutable {
+public class Book extends Model implements Updatable{
     String bookID;
     String title;
     String author;
@@ -8,10 +8,28 @@ public class Book implements DatabaseExecutable {
     int sellingPrice;
     int stock;
 
-    @Override
-    public String[] plsqlProcedure() {
-        String[] insertionStrings = new String[6];
-
-        return new String[0];
+    public Book(String bookID, String title, String author, int purchasingPrice, int sellingPrice, int stock) {
+        this.bookID = bookID;
+        this.title = title;
+        this.author = author;
+        this.purchasingPrice = purchasingPrice;
+        this.sellingPrice = sellingPrice;
+        this.stock = stock;
     }
+
+    @Override
+    public void update() {
+        databaseConnection.runProcedure("insertBook +("+
+                this.bookID+","+
+                this.title+","+
+                this.author+","+
+                this.purchasingPrice+","+
+                this.sellingPrice+","+
+                this.stock+
+                ")");
+    }
+
+
+
+
 }
