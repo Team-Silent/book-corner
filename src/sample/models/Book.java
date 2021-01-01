@@ -16,7 +16,7 @@ public class Book extends Model implements Updatable{
     }
 
     @Override
-    public void update() {
+    public void saveToDatabase() {
         databaseConnection.runProcedure("insertBook("+
                 "'"+this.title+"'"+","+
                 "'"+this.author+"'"+","+

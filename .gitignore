@@ -28,3 +28,6 @@ hs_err_pid*
 
 #out
 out/
+
+
+/src/sample/database/Environment.example

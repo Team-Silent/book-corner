@@ -23,7 +23,7 @@ public class DatabaseConnection {
         try {
 
             connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:xe", "project", "labnan");
+                Environment.connection,Environment.user,Environment.password);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,4 +55,4 @@ public class DatabaseConnection {
     }
 
 
-    }
+}
