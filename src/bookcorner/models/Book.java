@@ -1,4 +1,4 @@
-package sample.models;
+package bookcorner.models;
 
 public class Book extends Model implements Updatable{
     String title;

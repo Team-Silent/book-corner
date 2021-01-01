@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SalesReportController">
+<AnchorPane prefHeight="768.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookcorner.Controllers.SalesReportController">
    <children>
       <DatePicker fx:id="datePick" layoutX="452.0" layoutY="133.0" prefHeight="42.0" prefWidth="288.0" />
       <Label alignment="CENTER" layoutX="319.0" layoutY="29.0" maxWidth="1.7976931348623157E308" prefHeight="52.0" prefWidth="528.0" text="Sales Report" textAlignment="JUSTIFY">

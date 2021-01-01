@@ -1,4 +1,4 @@
-package sample.models;
+package bookcorner.models;
 
 public interface Updatable {
     void saveToDatabase();

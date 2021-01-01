@@ -1,4 +1,4 @@
-package sample.Controllers;
+package bookcorner.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

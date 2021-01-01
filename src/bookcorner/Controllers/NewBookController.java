@@ -1,4 +1,4 @@
-package sample.Controllers;
+package bookcorner.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SalesReportController {
+public class NewBookController {
+
 
     public void backToHome(ActionEvent actionEvent) throws IOException {
         Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/homeView.fxml"));

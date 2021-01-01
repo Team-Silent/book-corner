@@ -1,6 +1,6 @@
-package sample.models;
+package bookcorner.models;
 
-import sample.database.DatabaseConnection;
+import bookcorner.database.DatabaseConnection;
 
 public class Model {
     DatabaseConnection databaseConnection = new DatabaseConnection();

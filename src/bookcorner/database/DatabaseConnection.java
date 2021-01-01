@@ -1,4 +1,4 @@
-package sample.database;
+package bookcorner.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
