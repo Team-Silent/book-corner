@@ -1,6 +1,6 @@
 package bookcorner.models;
 
-public class Customer {
+public class Customer extends Model {
     String contactNumber;
     String name;
     String address;
@@ -11,11 +11,17 @@ public class Customer {
         this.address = address;
     }
 
+    public Customer(String contactNumber){
+        //Todo: query find customer and fill the fields
+    }
+
     public void buy(Book book){
-        //Todo: add the record to book_customer_junction
+        databaseConnection.runProcedure("buy("+
+                        book.getId()+","+
+                        contactNumber+","+
+                        book.getQuantity()+
+                        ")"
+                );
     }
 
-    private void buy(){
-
-    }
 }

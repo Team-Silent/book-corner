@@ -3,9 +3,10 @@ package bookcorner.models;
 public class Book extends Model implements Updatable{
     String title;
     String author;
+    private String id;
     int purchasingPrice;
     int sellingPrice;
-    int quantity;
+    private int quantity;
     int stock;
     boolean updatable = false;
 
@@ -15,6 +16,7 @@ public class Book extends Model implements Updatable{
         this.purchasingPrice = purchasingPrice;
         this.sellingPrice = sellingPrice;
         this.quantity = quantity;
+        this.id = title+author;
         updatable = true;
     }
 
@@ -23,10 +25,13 @@ public class Book extends Model implements Updatable{
         //Todo: find book; assign values
     }
 
+    public String getId() {
+        return id;
+    }
 
-
-
-
+    public int getQuantity() {
+        return quantity;
+    }
 
     @Override
     public void updateStock() {
