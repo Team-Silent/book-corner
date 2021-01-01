@@ -1,5 +1,5 @@
 package bookcorner.models;
 
 public interface Updatable {
-    void saveToDatabase();
+    void updateStock();
 }
