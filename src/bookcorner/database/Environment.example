@@ -1,6 +1,0 @@
-
-public class Environment {
-    static String connection = "jdbc:oracle:thin:@localhost:1521:xe";
-    static String user = "project";
-    static String password = "labnan";
-}
