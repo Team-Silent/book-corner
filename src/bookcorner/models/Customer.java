@@ -10,4 +10,8 @@ public class Customer {
         this.name = name;
         this.address = address;
     }
+
+    public void buy(Book book){
+        //Todo: add the record to book_customer_junction
+    }
 }
