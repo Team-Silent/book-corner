@@ -1,4 +1,5 @@
 package bookcorner.models;
+//Todo: Needs to be moved to a different package i think
 
 public class Buy extends Model{
     Customer customer;
@@ -10,10 +11,9 @@ public class Buy extends Model{
     }
 
     public void makePurchase(){
-        /*Todo: for each books
-                add record to book_customer_junction_table
-                change book stock count
-            */
+        for (Book book: books) {
+            customer.buy(book);
+        }
 
     };
 }
