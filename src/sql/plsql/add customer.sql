@@ -16,7 +16,7 @@ BEGIN
                end into found from DUAL;
 
     IF found=0 THEN
-       INSERT INTO Customers VALUES(Name,Contact_no,Address);
+       INSERT INTO Customers VALUES(Contact_no,Name,,Address);
     
     END IF;
 END;
