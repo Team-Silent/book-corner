@@ -1,4 +1,5 @@
 package bookcorner.Controllers;
+import bookcorner.models.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SaleInfoController implements Initializable {
@@ -27,6 +29,8 @@ public class SaleInfoController implements Initializable {
     @FXML private TextArea cust_contact;
     @FXML private ComboBox<String> bookName;
 
+    Customer customer;
+    ArrayList<String> selectedBooks=new ArrayList<>();
 
     public void backToHome(ActionEvent actionEvent) throws IOException {
         Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/homeView.fxml"));
@@ -51,11 +55,19 @@ public class SaleInfoController implements Initializable {
         String customerContact=cust_contact.getText();
         String customerAddress=cust_address.getText();
         System.out.println(customerName+" "+customerContact+" "+customerAddress);
-
+        createCustomerRecord(customerName,customerContact,customerAddress);
+        // test
+        System.out.println(selectedBooks);
     }
-    public void bookList(ActionEvent actionEvent) {
+
+    public void createCustomerRecord(String name,String contact,String address){
+        customer=new Customer(contact,name,address);
+    }
+
+    public String bookList(ActionEvent actionEvent) {
         String book=bookName.getSelectionModel().getSelectedItem().toString();
-        System.out.println("Book : "+book);
+//        System.out.println("Book : "+book);
+        return book;
     }
 
     // For testing purpose
@@ -66,4 +78,8 @@ public class SaleInfoController implements Initializable {
     }
 
 
+    public void addBook(ActionEvent actionEvent) {
+        String book=bookList(actionEvent);
+        selectedBooks.add(book);
+    }
 }
