@@ -4,8 +4,8 @@
 //Todo: Copy the file named Environment.example as Environment.java
 
 public class Environment {
-    static String connection = "jdbc:oracle:thin:@localhost:1521:xe";
-    static String user = "your_user_name";
-    static String password = "your_password";
+    static final String connection = "jdbc:oracle:thin:@localhost:1521:xe";
+    static final String user = "your_user_name";
+    static final String password = "your_password";
 
 }
