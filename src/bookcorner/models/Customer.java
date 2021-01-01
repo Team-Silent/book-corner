@@ -14,4 +14,8 @@ public class Customer {
     public void buy(Book book){
         //Todo: add the record to book_customer_junction
     }
+
+    private void buy(){
+
+    }
 }

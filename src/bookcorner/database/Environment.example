@@ -1,0 +1,11 @@
+
+//Todo: Add package name here
+//Todo: Then change user_name, password etc according to your oracle dbms configuration
+//Todo: Change the file name from Environment.example to Environment.java
+
+public class Environment {
+    static String connection = "jdbc:oracle:thin:@localhost:1521:xe";
+    static String user = "your_user_name";
+    static String password = "your_password";
+   
+}
