@@ -30,18 +30,18 @@
    <children>
       <Pane prefHeight="745.0" prefWidth="1257.0" GridPane.rowIndex="2">
          <children>
-            <TextArea layoutX="458.0" layoutY="123.0" prefHeight="38.0" prefWidth="378.0">
+            <TextArea fx:id="cust_name" layoutX="458.0" layoutY="123.0" prefHeight="38.0" prefWidth="378.0">
                <font>
                   <Font size="20.0" />
                </font></TextArea>
             <Text layoutX="341.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name" wrappingWidth="116.0625" />
-            <TextArea layoutX="458.0" layoutY="166.0" prefHeight="38.0" prefWidth="378.0">
+            <TextArea fx:id="cust_contact" layoutX="458.0" layoutY="166.0" prefHeight="38.0" prefWidth="378.0">
                <font>
                   <Font size="20.0" />
                </font></TextArea>
             <Text layoutX="341.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." wrappingWidth="116.0625" />
             <Text layoutX="341.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="116.0625" />
-            <TextArea layoutX="458.0" layoutY="212.0" prefHeight="38.0" prefWidth="378.0">
+            <TextArea fx:id="cust_address" layoutX="458.0" layoutY="212.0" prefHeight="38.0" prefWidth="378.0">
                <font>
                   <Font size="20.0" />
                </font></TextArea>
@@ -58,14 +58,14 @@
                <children>
                   <Pane layoutX="-40.0" prefHeight="127.0" prefWidth="534.0">
                      <children>
-                        <ComboBox layoutX="34.0" layoutY="35.0" prefHeight="38.0" prefWidth="406.0" />
+                        <ComboBox fx:id="bookName" layoutX="34.0" layoutY="35.0" onAction="#bookList" prefHeight="38.0" prefWidth="406.0" />
                         <Text layoutX="230.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </Text>
-                        <TextField layoutX="453.0" layoutY="35.0" prefHeight="39.0" prefWidth="75.0" />
-                        <Button layoutX="271.0" layoutY="94.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" text="Add">
+                        <TextField fx:id="bookQuantity" layoutX="453.0" layoutY="35.0" prefHeight="39.0" prefWidth="75.0" />
+                        <Button fx:id="bookAdd" layoutX="271.0" layoutY="94.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" text="Add">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -90,7 +90,7 @@
                   <Font size="31.0" />
                </font>
             </Text>
-            <Button layoutX="887.0" layoutY="644.0" mnemonicParsing="false" text="Save">
+            <Button layoutX="887.0" layoutY="644.0" mnemonicParsing="false" onAction="#saveButtonClicked" text="Save">
                <font>
                   <Font size="18.0" />
                </font>

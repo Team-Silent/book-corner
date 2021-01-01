@@ -1,14 +1,32 @@
 package bookcorner.Controllers;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class SaleInfoController {
+public class SaleInfoController implements Initializable {
+
+    @FXML private Button bookAdd;
+    @FXML private TextField bookQuantity;
+    @FXML private TextArea cust_address;
+    @FXML private TextArea cust_name;
+    @FXML private TextArea cust_contact;
+    @FXML private ComboBox<String> bookName;
+
 
     public void backToHome(ActionEvent actionEvent) throws IOException {
         Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/homeView.fxml"));
@@ -27,4 +45,25 @@ public class SaleInfoController {
         window.setScene(scene);
         window.show();
     }
+
+    public void saveButtonClicked(ActionEvent actionEvent) {
+        String customerName=cust_name.getText();
+        String customerContact=cust_contact.getText();
+        String customerAddress=cust_address.getText();
+        System.out.println(customerName+" "+customerContact+" "+customerAddress);
+
+    }
+    public void bookList(ActionEvent actionEvent) {
+        String book=bookName.getSelectionModel().getSelectedItem().toString();
+        System.out.println("Book : "+book);
+    }
+
+    // For testing purpose
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<String> bookList= FXCollections.observableArrayList("Sherlock Holmes","Harry Potter","Rich Dad Poor Dad","The Dialogues of Plato");
+        bookName.setItems(bookList);
+    }
+
+
 }
