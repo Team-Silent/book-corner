@@ -1,4 +1,3 @@
-package sample.database;
 
 public class Environment {
     static String connection = "jdbc:oracle:thin:@localhost:1521:xe";
