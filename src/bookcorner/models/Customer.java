@@ -20,15 +20,15 @@ public class Customer extends Model {
 
     public void buy(Book book){
         databaseConnection.runProcedure("buy("+
-                        book.getId()+","+
-                        contactNumber+","+
-                        book.getQuantity()+
+                       "'"+ book.getId()+"'"+","+
+                       "'"+ contactNumber+"'"+","+
+                       "'"+ book.getQuantity()+"'"+
                         ")"
                 );
     }
 
     public void addToRecords(){
-        if(!recordable) return;
+        if(!recordable) throw new IllegalArgumentException();
 
         /*Todo: Add this customer to the database
                 Using procedure: add_or_update_customer()
