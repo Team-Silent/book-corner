@@ -1,5 +1,8 @@
-package bookcorner.models;
+package bookcorner.functionalities;
 //Todo: Needs to be moved to a different package i think
+
+import bookcorner.models.Book;
+import bookcorner.models.Customer;
 
 public class Buy {
     Customer customer;
