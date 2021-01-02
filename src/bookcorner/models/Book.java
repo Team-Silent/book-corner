@@ -1,6 +1,6 @@
 package bookcorner.models;
 
-public class Book extends Model implements Updatable{
+public class Book extends Model{
     String title;
     String author;
     private String id;
@@ -33,7 +33,6 @@ public class Book extends Model implements Updatable{
         return quantity;
     }
 
-    @Override
     public void updateStock() {
         if(!updatable) return;
         databaseConnection.runProcedure("insertBook("+
