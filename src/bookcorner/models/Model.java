@@ -1,10 +1,7 @@
 package bookcorner.models;
 
-import bookcorner.database.DatabaseConnection;
+import bookcorner.database.DatabaseUser;
 
-public abstract class Model {
-    DatabaseConnection databaseConnection = new DatabaseConnection();
+public abstract class Model extends DatabaseUser {
     abstract String getTableName();
-
-
 }

@@ -2,13 +2,11 @@ package bookcorner.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class DatabaseConnection {
+ class DatabaseConnection {
     Connection connection;
     Statement statement;
-    ResultSet resultSet;
 
     public DatabaseConnection() {
         try {
