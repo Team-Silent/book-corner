@@ -46,6 +46,8 @@ public class Book extends Model implements Updatable{
     }
 
 
-
-
+    @Override
+    String getTableName() {
+        return "Books";
+    }
 }

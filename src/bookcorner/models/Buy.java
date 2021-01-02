@@ -1,7 +1,7 @@
 package bookcorner.models;
 //Todo: Needs to be moved to a different package i think
 
-public class Buy extends Model{
+public class Buy {
     Customer customer;
     Book[] books;
 

@@ -38,4 +38,9 @@ public class Customer extends Model {
         );
     }
 
+
+    @Override
+    String getTableName() {
+        return "Customers";
+    }
 }
