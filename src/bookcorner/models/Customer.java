@@ -33,8 +33,9 @@ public class Customer extends Model {
         databaseConnection.runProcedure("addCustomer("+
                                     "'"+contactNumber+"'"+","+
                                     "'"+name         +"'"+","+
-                                    "'"+address+"'"
-        );                      
+                                    "'"+address      +"'"+
+                                    ")"
+        );
     }
 
 }
