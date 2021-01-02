@@ -45,13 +45,13 @@
                <font>
                   <Font size="20.0" />
                </font></TextArea>
-            <TableView layoutX="187.0" layoutY="465.0" prefHeight="87.0" prefWidth="859.0">
+            <TableView fx:id="saleInfoTableView" layoutX="187.0" layoutY="442.0" prefHeight="177.0" prefWidth="861.0">
                <columns>
-                  <TableColumn prefWidth="179.20001983642578" text="Book Name" />
-                  <TableColumn prefWidth="161.5999755859375" text="Author" />
-                  <TableColumn prefWidth="145.0" text="Quantity" />
-                  <TableColumn prefWidth="170.0" text="Price" />
-                  <TableColumn prefWidth="205.0" text="Total" />
+                  <TableColumn fx:id="tv_bookName" prefWidth="179.20001983642578" text="Book Name" />
+                  <TableColumn fx:id="tv_author" prefWidth="161.5999755859375" text="Author" />
+                  <TableColumn fx:id="tv_quantity" prefWidth="145.0" text="Quantity" />
+                  <TableColumn fx:id="tv_price" prefWidth="170.0" text="Price" />
+                  <TableColumn fx:id="tv_total" prefWidth="205.0" text="Total" />
                </columns>
             </TableView>
             <Group layoutX="380.0" layoutY="283.0">
@@ -64,7 +64,7 @@
                               <Font size="19.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="bookQuantity" layoutX="453.0" layoutY="35.0" prefHeight="39.0" prefWidth="75.0" />
+                        <TextField fx:id="bookQuantity" alignment="CENTER" layoutX="453.0" layoutY="35.0" prefHeight="39.0" prefWidth="75.0" text="1" />
                         <Button fx:id="bookAdd" layoutX="271.0" layoutY="94.0" mnemonicParsing="false" onAction="#addBook" prefHeight="31.0" prefWidth="65.0" text="Add">
                            <font>
                               <Font size="14.0" />

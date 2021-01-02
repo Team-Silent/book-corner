@@ -1,5 +1,6 @@
 package bookcorner.Controllers;
 import bookcorner.models.Customer;
+import frontEnd.TableView.ViewSaleInfo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,10 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,6 +21,12 @@ import java.util.ResourceBundle;
 
 public class SaleInfoController implements Initializable {
 
+    public TableView<ViewSaleInfo> saleInfoTableView;
+    public TableColumn<ViewSaleInfo,String> tv_bookName;
+    public TableColumn<ViewSaleInfo,String> tv_author;
+    public TableColumn<ViewSaleInfo,Integer> tv_quantity;
+    public TableColumn<ViewSaleInfo,Double> tv_price;
+    public TableColumn<ViewSaleInfo,Double> tv_total;
     @FXML private Button bookAdd;
     @FXML private TextField bookQuantity;
     @FXML private TextArea cust_address;
@@ -70,16 +75,27 @@ public class SaleInfoController implements Initializable {
         return book;
     }
 
-    // For testing purpose
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> bookList= FXCollections.observableArrayList("Sherlock Holmes","Harry Potter","Rich Dad Poor Dad","The Dialogues of Plato");
         bookName.setItems(bookList);
+
+        tv_bookName.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,String>("bookName"));
+        tv_quantity.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,Integer>("quantity"));
+
     }
 
 
     public void addBook(ActionEvent actionEvent) {
         String book=bookList(actionEvent);
         selectedBooks.add(book);
+
+        // add new book to the list
+        Integer quantity= Integer.parseInt(bookQuantity.getText());
+        ViewSaleInfo record=new ViewSaleInfo(book,quantity);
+        saleInfoTableView.getItems().add(record);
+
+
     }
 }

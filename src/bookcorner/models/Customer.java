@@ -27,7 +27,6 @@ public class Customer extends Model {
                 );
     }
 
-
     public void addToRecords(){
         if(!recordable) return;
 
