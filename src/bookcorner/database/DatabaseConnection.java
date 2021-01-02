@@ -1,10 +1,8 @@
 package bookcorner.database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.*;
 
- public class DatabaseConnection {
+public class DatabaseConnection {
     Connection connection;
     Statement statement;
 
@@ -50,6 +48,19 @@ import java.sql.Statement;
             e.printStackTrace();
         }
         disconnect();
+    }
+
+    public ResultSet runQuery(String query){
+        ResultSet resultSet = null;
+        connect();
+        try{
+             resultSet = statement.executeQuery(query);
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        disconnect();
+        return resultSet;
     }
 
 
