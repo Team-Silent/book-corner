@@ -1,9 +1,11 @@
 package bookcorner.models;
 
 import bookcorner.functionalities.Buy;
+import org.junit.jupiter.api.Test;
 
 public class TestModel {
-    public static void main(String[] args) {
+    @Test
+    public void testModel() {
         Book book = new Book("ABC","DEF",2200,2500,10);
         book.updateStock();
         Customer customer = new Customer("123","abc","def");
