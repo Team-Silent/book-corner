@@ -26,7 +26,7 @@
                <font>
                   <Font size="18.0" />
                </font></Text>
-                <Text layoutX="333.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Purchese Price" wrappingWidth="116.0625">
+                <Text layoutX="333.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Purchase Price" wrappingWidth="116.0625">
                <font>
                   <Font size="18.0" />
                </font></Text>
@@ -38,7 +38,7 @@
                     </font>
                 </Text>
                 <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" onAction="#backToHome" text="Back" />
-                <Button layoutX="612.0" layoutY="514.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="93.0" text="Add">
+                <Button layoutX="612.0" layoutY="514.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="38.0" prefWidth="93.0" text="Add">
                     <font>
                         <Font size="17.0" />
                     </font>
@@ -51,27 +51,27 @@
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <TextField layoutX="487.0" layoutY="258.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="purchasingPrice" layoutX="487.0" layoutY="258.0" prefHeight="38.0" prefWidth="343.0">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <TextField layoutX="487.0" layoutY="397.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="stockQuantity" layoutX="487.0" layoutY="397.0" prefHeight="38.0" prefWidth="343.0">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <TextField layoutX="487.0" layoutY="328.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="sellingPrice" layoutX="487.0" layoutY="328.0" prefHeight="38.0" prefWidth="343.0">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <TextField layoutX="487.0" layoutY="121.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="bookTitle" layoutX="487.0" layoutY="121.0" prefHeight="38.0" prefWidth="343.0">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <TextField layoutX="487.0" layoutY="192.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="author" layoutX="487.0" layoutY="192.0" prefHeight="38.0" prefWidth="343.0">
                <font>
                   <Font size="19.0" />
                </font>

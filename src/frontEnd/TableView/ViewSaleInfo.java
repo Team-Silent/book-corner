@@ -5,9 +5,9 @@ import javafx.fxml.Initializable;
 public class ViewSaleInfo {
     private String bookName;
     private String author;
-    private Double price;
+    private Integer price;
     private Integer quantity;
-    private Double total;
+    private Integer total;
 
     public ViewSaleInfo(String bookName,Integer quantity) {
         this.bookName = bookName;
@@ -31,11 +31,11 @@ public class ViewSaleInfo {
         this.author = author;
     }
 
-    public Double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -47,11 +47,11 @@ public class ViewSaleInfo {
         this.quantity = quantity;
     }
 
-    public Double getTotal() {
+    public Integer getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(Integer total) {
         this.total = total;
     }
 }
