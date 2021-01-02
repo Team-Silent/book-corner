@@ -5,10 +5,11 @@ import bookcorner.models.Book;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookFinder extends Finder <Book> {
     @Override
-    ArrayList<Book> findAll() {
+    List<Book> findAll() {
         ArrayList<Book> bookArrayList = new ArrayList<>();
 
         databaseConnection.connect();

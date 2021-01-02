@@ -4,6 +4,7 @@ import bookcorner.models.Book;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FinderTester {
     @Test
@@ -12,7 +13,7 @@ public class FinderTester {
         printBooks(bookFinder.findAll());
     }
 
-    private void printBooks(ArrayList<Book> books) {
+    private void printBooks(List<Book> books) {
         for (Book book: books) {
             System.out.println(book.getId() + " " + book.getTitle()+" " + book.getAuthor()+" " + book.getQuantity());
         }
