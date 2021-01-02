@@ -1,13 +1,13 @@
 package bookcorner.models;
 
 public class Book extends Model{
-    String title;
-    String author;
+    private String title;
+    private String author;
     private String id;
-    int purchasingPrice;
-    int sellingPrice;
+    private int purchasingPrice;
+    private int sellingPrice;
     private int quantity;
-    int stock;
+    private int stock;
     boolean updatable = false;
 
     public Book(String title, String author, int purchasingPrice, int sellingPrice, int quantity) {
@@ -27,6 +27,26 @@ public class Book extends Model{
 
     public String getId() {
         return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getPurchasingPrice() {
+        return purchasingPrice;
+    }
+
+    public int getSellingPrice() {
+        return sellingPrice;
+    }
+
+    public int getStock() {
+        return stock;
     }
 
     public int getQuantity() {

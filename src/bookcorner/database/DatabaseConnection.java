@@ -15,7 +15,7 @@ public class DatabaseConnection {
         }
     }
 
-    private void connect() {
+    public void connect() {
         try {
 
             connection = DriverManager.getConnection(
@@ -25,7 +25,7 @@ public class DatabaseConnection {
         }
     }
 
-    private void disconnect(){
+    public void disconnect(){
         try {
             connection.close();
         }
@@ -52,14 +52,15 @@ public class DatabaseConnection {
 
     public ResultSet runQuery(String query){
         ResultSet resultSet = null;
-        connect();
+        //connect();
         try{
+             statement = connection.createStatement();
              resultSet = statement.executeQuery(query);
         }
         catch (SQLException e){
             e.printStackTrace();
         }
-        disconnect();
+       // disconnect();
         return resultSet;
     }
 

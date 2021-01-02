@@ -10,8 +10,11 @@ public class BookFinder extends Finder <Book> {
     @Override
     ArrayList<Book> findAll() {
         ArrayList<Book> bookArrayList = new ArrayList<>();
+
+        databaseConnection.connect();
         ResultSet resultSet = databaseConnection.runQuery("Select * from Books");
         try {
+
             while (resultSet.next()){
                 Book book = getBookFromResult(resultSet);
                 bookArrayList.add(book);
@@ -20,6 +23,7 @@ public class BookFinder extends Finder <Book> {
         catch (SQLException e){
             e.printStackTrace();
         }
+        databaseConnection.disconnect();
         return bookArrayList;
     }
 
