@@ -10,7 +10,7 @@ import java.util.List;
 public class BookFinder extends Finder <Book> {
     @Override
     List<Book> findAll() {
-        ArrayList<Book> bookArrayList = new ArrayList<>();
+        List<Book> bookArrayList = new ArrayList<>();
 
         databaseConnection.connect();
         ResultSet resultSet = databaseConnection.runQuery("Select * from Books");
