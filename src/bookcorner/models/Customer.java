@@ -30,9 +30,7 @@ public class Customer extends Model {
     public void addToRecords(){
         if(!recordable) throw new IllegalArgumentException();
 
-        /*Todo: Add this customer to the database
-                Using procedure: add_or_update_customer()
-        */
+        databaseConnection.runProcedure("");
     }
 
 }
