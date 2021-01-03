@@ -37,4 +37,26 @@ public class BookFinder extends Finder <Book> {
                             resultSet.getInt("stock")
                     );
     }
+
+
+
+    public Book findByID(String id){
+        Book book = null;
+        databaseConnection.connect();
+        ResultSet resultSet = databaseConnection.runQuery("Select * from Books where Books.Book_ID = '" + id +"'");
+        try {
+
+            System.out.println("start");
+            while (resultSet.next()){
+                book = getBookFromResult(resultSet);
+
+            }
+        }
+        catch (SQLException e){
+            System.out.println("Exception");
+            e.printStackTrace();
+        }
+        databaseConnection.disconnect();
+        return book;
+    }
 }

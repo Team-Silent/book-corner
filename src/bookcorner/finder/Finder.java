@@ -8,4 +8,5 @@ import java.util.List;
 
 public abstract class Finder <T extends Model> extends DatabaseUser {
     abstract List<Book> findAll();
+
 }

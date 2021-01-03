@@ -7,7 +7,7 @@ public class TestModel {
     @Test
     public void testModel() {
         Book book = new Book("ABC","DEF",2200,2500,10);
-        book.updateStock();
+        book.saveToDatabase();
         Customer customer = new Customer("123","abc","def");
         customer.addToRecords();
         Buy buy = new Buy(customer,new Book[] {book});

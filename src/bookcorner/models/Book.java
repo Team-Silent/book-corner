@@ -1,5 +1,7 @@
 package bookcorner.models;
 
+import bookcorner.finder.BookFinder;
+
 public class Book extends Model{
     private String title;
     private String author;
@@ -20,9 +22,20 @@ public class Book extends Model{
         updatable = true;
     }
 
+    private void syncFromDatabase(){
+       Book foundBook = new BookFinder().findByID(id);
+       this.purchasingPrice = foundBook.purchasingPrice;
+       this.sellingPrice = foundBook.sellingPrice;
+       this.stock = foundBook.quantity;
+    }
+
+    int getTotalSellingPrice(){
+        return quantity*sellingPrice;
+    }
 
     public Book(String title, String author, int quantity){
-        //Todo: find book; assign values
+        syncFromDatabase();
+        updatable = false;
     }
 
     public String getId() {
@@ -53,7 +66,7 @@ public class Book extends Model{
         return quantity;
     }
 
-    public void updateStock() {
+    public void saveToDatabase() {
         if(!updatable) return;
         databaseConnection.runProcedure("insertBook("+
                 "'"+this.title+"'"+","+

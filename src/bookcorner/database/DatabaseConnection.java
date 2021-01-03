@@ -51,6 +51,7 @@ public class DatabaseConnection {
     }
 
     public ResultSet runQuery(String query){
+        System.out.println(query);
         ResultSet resultSet = null;
         //connect();
         try{
