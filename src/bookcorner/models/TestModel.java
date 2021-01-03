@@ -12,18 +12,11 @@ public class TestModel {
         customer.addToRecords();
         Buy buy = new Buy(customer,new Book[] {book});
         buy.makePurchase();
+    }
 
-        ///
-        //
-
-        //Add new book, stock update
-        //Buy (with add customer information) Buy->[customer_id, book_id, quantity]
-        //Add-> Controller -> for all info buy
-
-        //Add sales information  (3rd)
-        //View sales information
-
-        //Cash memo generation (4th)
+    @Test
+    public void testSale(){
+        new Sale("1234").makeSale();
     }
 
 

@@ -7,6 +7,6 @@ import bookcorner.models.Model;
 import java.util.List;
 
 public abstract class Finder <T extends Model> extends DatabaseUser {
-    abstract List<Book> findAll();
-
+    abstract List<T> findAll();
+    abstract List<T> findByProperty(String property, String value);
 }

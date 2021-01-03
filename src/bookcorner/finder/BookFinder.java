@@ -52,6 +52,7 @@ public class BookFinder extends Finder <Book> {
         return getBooks(query).get(0);
     }
 
+    @Override
     public List<Book> findByProperty(String columnName, String value){
         String query = "Select * from Books where"+ "Books."+ columnName +"= '" + value +"'";
         return getBooks(query);

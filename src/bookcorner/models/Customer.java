@@ -19,6 +19,7 @@ public class Customer extends Model {
     }
 
     public void buy(Book book){
+        new Sale(contactNumber).makeSale();
         databaseConnection.runProcedure("buy("+
                        "'"+ book.getId()+"'"+","+
                        "'"+ contactNumber+"'"+","+
