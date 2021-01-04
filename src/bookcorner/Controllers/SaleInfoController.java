@@ -108,4 +108,11 @@ public class SaleInfoController implements Initializable {
         tv_total.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,Integer>("total"));
 
     }
+
+    public void removeBook(ActionEvent actionEvent) {
+        ObservableList<ViewSaleInfo>allBooks,book;
+        allBooks=saleInfoTableView.getItems();
+        book=saleInfoTableView.getSelectionModel().getSelectedItems();
+        book.forEach(allBooks::remove);
+    }
 }
