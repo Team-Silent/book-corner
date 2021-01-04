@@ -82,15 +82,16 @@ public class SaleInfoController implements Initializable {
 
     public void addBook(ActionEvent actionEvent) {
         String book=bookList(actionEvent);
-        Book bookDetails=bookRecord.findByTitle(book);
-        selectedBooks.add(book);
-
-        // add new book to the list
-        int quantity= Integer.parseInt(bookQuantity.getText());
-        int totalPrice=quantity*(bookDetails.getSellingPrice());
-        ViewSaleInfo record=new ViewSaleInfo(book,bookDetails.getAuthor(),quantity,bookDetails.getSellingPrice(),totalPrice);
-        saleInfoTableView.getItems().add(record);
-
+        if(!selectedBooks.contains(book))
+        {
+            Book bookDetails=bookRecord.findByTitle(book);
+            selectedBooks.add(book);
+            // add new book to the list
+            int quantity = Integer.parseInt(bookQuantity.getText());
+            int totalPrice = quantity * (bookDetails.getSellingPrice());
+            ViewSaleInfo record = new ViewSaleInfo(book, bookDetails.getAuthor(), quantity, bookDetails.getSellingPrice(), totalPrice);
+            saleInfoTableView.getItems().add(record);
+        }
     }
 
 
@@ -113,6 +114,9 @@ public class SaleInfoController implements Initializable {
         ObservableList<ViewSaleInfo>allBooks,book;
         allBooks=saleInfoTableView.getItems();
         book=saleInfoTableView.getSelectionModel().getSelectedItems();
+        for(ViewSaleInfo v:book){
+            selectedBooks.remove(v.getBookName());
+        }
         book.forEach(allBooks::remove);
     }
 }
