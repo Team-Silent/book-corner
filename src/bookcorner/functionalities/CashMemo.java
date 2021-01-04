@@ -8,10 +8,20 @@ import java.util.List;
 public class CashMemo {
     List<Book> bookList;
     Customer customer;
+    int totalPrice;
 
     CashMemo(Customer forCustomer, List<Book> bookList){
         this.bookList = bookList;
         this.customer = forCustomer;
+        findTotalPrice();
+    }
+
+    private void findTotalPrice() {
+        int sum = 0;
+        for (Book book: bookList ) {
+            sum+= book.getTotalSellingPrice();
+        }
+        totalPrice = sum;
     }
 
     public Customer getCustomer() {
@@ -21,4 +31,10 @@ public class CashMemo {
     public List<Book> getBookList() {
         return bookList;
     }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+
 }
