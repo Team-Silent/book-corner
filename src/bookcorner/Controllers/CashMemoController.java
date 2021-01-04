@@ -18,4 +18,5 @@ public class CashMemoController {
         window.setScene(scene);
         window.show();
     }
+
 }

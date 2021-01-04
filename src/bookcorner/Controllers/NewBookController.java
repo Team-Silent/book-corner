@@ -34,7 +34,7 @@ public class NewBookController {
 
         // Creating new book
         book=new Book(title,bookAuthor,purchase,sell,quantity);
-
+        book.saveToDatabase();
         // Clear everything
         bookTitle.clear();
         author.clear();

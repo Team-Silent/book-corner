@@ -9,9 +9,12 @@ public class ViewSaleInfo {
     private Integer quantity;
     private Integer total;
 
-    public ViewSaleInfo(String bookName,Integer quantity) {
+    public ViewSaleInfo(String bookName,String author,Integer quantity,Integer price,Integer total) {
         this.bookName = bookName;
+        this.author=author;
         this.quantity=quantity;
+        this.price=price;
+        this.total=total;
     }
     public  ViewSaleInfo(){}
 

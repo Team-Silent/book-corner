@@ -1,4 +1,6 @@
 package bookcorner.Controllers;
+import bookcorner.finder.BookFinder;
+import bookcorner.models.Book;
 import bookcorner.models.Customer;
 import frontEnd.TableView.ViewSaleInfo;
 import javafx.collections.FXCollections;
@@ -34,6 +36,8 @@ public class SaleInfoController implements Initializable {
     @FXML private ComboBox<String> bookName;
 
     Customer customer;
+    BookFinder bookFinder=new BookFinder();
+    BookFinder bookRecord=new BookFinder();
     ArrayList<String> selectedBooks=new ArrayList<>();
 
 
@@ -45,6 +49,7 @@ public class SaleInfoController implements Initializable {
         window.setScene(scene);
         window.show();
     }
+
 
     public void cashMemoScene(ActionEvent actionEvent) throws IOException {
         Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/cashMemo.fxml"));
@@ -77,11 +82,13 @@ public class SaleInfoController implements Initializable {
 
     public void addBook(ActionEvent actionEvent) {
         String book=bookList(actionEvent);
+        Book bookDetails=bookRecord.findByTitle(book);
         selectedBooks.add(book);
 
         // add new book to the list
-        Integer quantity= Integer.parseInt(bookQuantity.getText());
-        ViewSaleInfo record=new ViewSaleInfo(book,quantity);
+        int quantity= Integer.parseInt(bookQuantity.getText());
+        int totalPrice=quantity*(bookDetails.getSellingPrice());
+        ViewSaleInfo record=new ViewSaleInfo(book,bookDetails.getAuthor(),quantity,bookDetails.getSellingPrice(),totalPrice);
         saleInfoTableView.getItems().add(record);
 
     }
@@ -89,11 +96,16 @@ public class SaleInfoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> bookList= FXCollections.observableArrayList("Sherlock Holmes","Harry Potter","Rich Dad Poor Dad","The Dialogues of Plato");
-        bookName.setItems(bookList);
+
+        for(Book b:bookFinder.findAll()){
+            bookName.getItems().add(b.getTitle());
+        }
 
         tv_bookName.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,String>("bookName"));
         tv_quantity.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,Integer>("quantity"));
+        tv_author.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,String>("author"));
+        tv_price.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,Integer>("price"));
+        tv_total.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,Integer>("total"));
 
     }
 }

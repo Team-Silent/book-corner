@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookFinder extends Finder <Book> {
+
     @Override
-    List<Book> findAll() {
-        List<Book> bookArrayList = new ArrayList<>();
+    public List<Book> findAll() {
         String query = "Select * from Books";
         return getBooks(query);
     }
@@ -44,13 +44,19 @@ public class BookFinder extends Finder <Book> {
                     );
     }
 
-
-
     public Book findByID(String id){
         Book book = null;
         String query = "Select * from Books where Books.Book_ID = '" + id +"'";
         return getBooks(query).get(0);
     }
+
+    public Book findByTitle(String title){
+        Book book = null;
+        String query = "Select * from Books where Books.title = '" + title +"'";
+        return getBooks(query).get(0);
+    }
+
+
 
     @Override
     public List<Book> findByProperty(String columnName, String value){
