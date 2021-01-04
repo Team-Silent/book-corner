@@ -29,7 +29,7 @@ public class Book extends Model{
        this.stock = foundBook.quantity;
     }
 
-    int getTotalSellingPrice(){
+    public int getTotalSellingPrice(){
         return quantity*sellingPrice;
     }
 
