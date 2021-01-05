@@ -31,7 +31,7 @@ public class Sale extends Model{
     }
 
     private void toSaleBookJunctionTable(Book book) {
-        databaseConnection.runProcedure("book_to_sell_at("+
+        databaseConnection.runProcedure("book_to_sale_for("+
                 "'"+customer.getID()+"'"+","+
                 "'"+book.getId()+"'"+","+
                 "'"+book.getQuantity()+"'"+
