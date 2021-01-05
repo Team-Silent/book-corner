@@ -1,26 +1,49 @@
 package bookcorner.models;
 
+import java.util.Date;
+import java.util.List;
+
 public class Sale extends Model{
     String id;
-    String customerID;
+    Customer customer;
+    Date date;
     boolean databaseAddable = false;
+    List<Book> bookList;
 
-    public Sale(String customerID) {
-        this.customerID = customerID;
+    public Sale(Customer customer, List<Book> bookList) {
+        this.customer = customer;
+        this.bookList = bookList;
         databaseAddable = true;
     }
 
+
     public void makeSale(){
-        addToDatabase();
+        addSaleInfoToDatabase();
     }
 
-    private void addToDatabase(){
+    private void addSaleInfoToDatabase(){
         if(!databaseAddable) return;
+        toSalesTable();
+        for (Book book: bookList) {
+            toSaleBookJunctionTable(book);
+        }
+
+    }
+
+    private void toSaleBookJunctionTable(Book book) {
+        databaseConnection.runProcedure("book_to_sell_at("+
+                "'"+customer.getID()+"'"+","+
+                "'"+book.getId()+"'"+","+
+                "'"+book.getQuantity()+"'"+
+                ")"
+        );
+    }
+
+    private void toSalesTable() {
         databaseConnection.runProcedure("makeSales("+
-                                        "'"+ customerID + "'"+
+                                        "'"+ customer.getID() + "'"+
                                         ")"
         );
-
     }
 
 

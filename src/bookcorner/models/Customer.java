@@ -19,7 +19,6 @@ public class Customer extends Model {
     }
 
     public void buy(Book book){
-        new Sale(contactNumber).makeSale();
         databaseConnection.runProcedure("buy("+
                        "'"+ book.getId()+"'"+","+
                        "'"+ contactNumber+"'"+","+
@@ -43,5 +42,9 @@ public class Customer extends Model {
     @Override
     String getTableName() {
         return "Customers";
+    }
+
+    public String getID() {
+        return contactNumber;
     }
 }

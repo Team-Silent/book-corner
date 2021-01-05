@@ -34,6 +34,12 @@ public class Book extends Model{
     }
 
     public Book(String title, String author, int quantity){
+       this(title+author,quantity);
+    }
+
+    Book(String id, int quantity){
+        this.id = id;
+        this.quantity = quantity;
         syncFromDatabase();
         updatable = false;
     }
