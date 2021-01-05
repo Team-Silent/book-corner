@@ -17,6 +17,8 @@ public class Sale extends Model{
     }
 
 
+
+
     public void makeSale(){
         addSaleInfoToDatabase();
     }
