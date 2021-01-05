@@ -1,5 +1,5 @@
 CREATE OR REPLACE PROCEDURE book_to_sell_at(
-                            sid Book_Sales_junction.Sales_id%TYPE,
+                            cid Sales.Customer_id%TYPE,
                             bid BOOK_CUSTOMER_JUNCTION.Book_Id%TYPE,
                             qnt BOOK_CUSTOMER_JUNCTION.Quantity%TYPE
 )
@@ -8,12 +8,18 @@ CREATE OR REPLACE PROCEDURE book_to_sell_at(
     
     found int;
 
-	cid varchar2(11);
+	sid int;
     updated_stock int;
     stock int;
 
 BEGIN
-
+select Sales_id into sid
+from(
+    SELECT Sales_id
+    from Sales
+    Where Customer_id=cid
+    ORDER BY Sales_id DESC)
+Where ROWNUM = 1;
 
     select case
                when exists(select 1 from Sales where Sales_id = sid) then 1
