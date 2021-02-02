@@ -22,15 +22,15 @@
       </Label>
       <Label layoutX="98.0" layoutY="111.0" prefHeight="41.0" prefWidth="169.0" text="Billed to">
          <font>
-            <Font size="29.0" />
+            <Font size="26.0" />
          </font>
       </Label>
-      <Label fx:id="cust_name" layoutX="98.0" layoutY="169.0" prefHeight="35.0" prefWidth="227.0" text="Akbar Ali">
+      <Label fx:id="cust_name" layoutX="98.0" layoutY="167.0" prefHeight="35.0" prefWidth="227.0" text="Akbar Ali">
          <font>
-            <Font size="20.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="cust_add" layoutX="98.0" layoutY="204.0" prefHeight="35.0" prefWidth="257.0" text="11/2 Baker street,Dhaka">
+      <Label fx:id="cust_add" layoutX="98.0" layoutY="209.0" prefHeight="35.0" prefWidth="257.0" text="11/2 Baker street,Dhaka">
          <font>
             <Font size="20.0" />
          </font>
@@ -72,13 +72,13 @@
       </Label>
       <Separator layoutX="98.0" layoutY="300.0" prefWidth="1080.0" />
       <TableView layoutX="79.0" layoutY="327.0" prefHeight="407.0" prefWidth="888.0">
-        <columns>
-          <TableColumn fx:id="sl" prefWidth="87.0" text="SL  No." />
-          <TableColumn fx:id="bookList" prefWidth="320.0" text="Book List" />
+         <columns>
+            <TableColumn fx:id="sl" prefWidth="87.0" text="SL  No." />
+            <TableColumn fx:id="bookList" prefWidth="320.0" text="Book List" />
             <TableColumn fx:id="price" prefWidth="197.0" text="Price" />
             <TableColumn fx:id="quantity" prefWidth="112.0" text="Quantity" />
             <TableColumn fx:id="amount" prefWidth="176.0" text="Amount" />
-        </columns>
+         </columns>
       </TableView>
       <Label layoutX="1003.0" layoutY="342.0" prefHeight="32.0" prefWidth="68.0" text="Total :">
          <font>

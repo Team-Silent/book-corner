@@ -52,12 +52,21 @@ public class SaleInfoController implements Initializable {
 
 
     public void cashMemoScene(ActionEvent actionEvent) throws IOException {
-        Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/cashMemo.fxml"));
-        Scene scene=new Scene(saleReportView);
+//        Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/cashMemo.fxml"));
+//        Scene scene=new Scene(saleReportView);
 
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("../../frontEnd/cashMemo.fxml"));
+        Parent root=loader.load();
+
+        CashMemoController cashMemoController=loader.getController();
+        System.out.println(cust_name.getText());
+        cashMemoController.displayInfo(cust_name.getText(),cust_address.getText());
         Stage window =(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(scene);
+        window.setScene(new Scene(root));
         window.show();
+//        Stage stage=new Stage();
+//        stage.setScene(new Scene(root));
+//        stage.show();
     }
 
 
