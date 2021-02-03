@@ -8,7 +8,31 @@ import java.util.List;
 public class CashMemo {
     List<Book> bookList;
     Customer customer;
-    int totalPrice;
+    String bookTitle;
+    int totalPrice,price,quantity,amount;
+
+    public CashMemo(String bookTitle, int price, int quantity, int amount){
+        this.bookTitle=bookTitle;
+        this.price=price;
+        this.quantity=quantity;
+        this.amount=amount;
+    }
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
 
     CashMemo(Customer forCustomer, List<Book> bookList){
         this.bookList = bookList;

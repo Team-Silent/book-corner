@@ -1,7 +1,9 @@
 package bookcorner.Controllers;
 import bookcorner.finder.BookFinder;
+import bookcorner.functionalities.CashMemo;
 import bookcorner.models.Book;
 import bookcorner.models.Customer;
+import frontEnd.TableView.ViewCashMemo;
 import frontEnd.TableView.ViewSaleInfo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +21,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SaleInfoController implements Initializable {
@@ -39,6 +42,9 @@ public class SaleInfoController implements Initializable {
     BookFinder bookFinder=new BookFinder();
     BookFinder bookRecord=new BookFinder();
     ArrayList<String> selectedBooks=new ArrayList<>();
+    ArrayList<Integer> allPriceTotal=new ArrayList<>();
+    ArrayList<Book> bookList=new ArrayList<>();
+    ArrayList<CashMemo> bookCashMemo=new ArrayList<>();
 
 
     public void backToHome(ActionEvent actionEvent) throws IOException {
@@ -59,16 +65,16 @@ public class SaleInfoController implements Initializable {
         Parent root=loader.load();
 
         CashMemoController cashMemoController=loader.getController();
-        System.out.println(cust_name.getText());
-        cashMemoController.displayInfo(cust_name.getText(),cust_address.getText());
+
+        cashMemoController.displayInfo(cust_name.getText(),cust_address.getText(),getTotalPrice(),bookCashMemo);
         Stage window =(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
-//        Stage stage=new Stage();
-//        stage.setScene(new Scene(root));
-//        stage.show();
     }
 
+    public ArrayList<Book> getBookList(){
+        return bookList;
+    }
 
     public void saveButtonClicked(ActionEvent actionEvent) {
         String customerName=cust_name.getText();
@@ -95,14 +101,25 @@ public class SaleInfoController implements Initializable {
         {
             Book bookDetails=bookRecord.findByTitle(book);
             selectedBooks.add(book);
+            bookList.add(bookDetails);
             // add new book to the list
             int quantity = Integer.parseInt(bookQuantity.getText());
-            int totalPrice = quantity * (bookDetails.getSellingPrice());
-            ViewSaleInfo record = new ViewSaleInfo(book, bookDetails.getAuthor(), quantity, bookDetails.getSellingPrice(), totalPrice);
+            int price=bookDetails.getSellingPrice();
+            int totalPrice = quantity * price;
+            allPriceTotal.add(totalPrice);
+            CashMemo cashMemo=new CashMemo(book,price,quantity,totalPrice);
+            bookCashMemo.add(cashMemo);
+            ViewSaleInfo record = new ViewSaleInfo(book, bookDetails.getAuthor(), quantity, price, totalPrice);
             saleInfoTableView.getItems().add(record);
         }
     }
-
+    private int getTotalPrice(){
+        int sum=0;
+        for(int price:allPriceTotal){
+            sum+=price;
+        }
+        return sum;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -116,6 +133,7 @@ public class SaleInfoController implements Initializable {
         tv_author.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,String>("author"));
         tv_price.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,Integer>("price"));
         tv_total.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,Integer>("total"));
+
 
     }
 
