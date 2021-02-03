@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -12,35 +13,44 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" hgap="10" prefHeight="768.0" prefWidth="1240.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookcorner.Controllers.HomeViewController">
+<GridPane alignment="center" hgap="10" prefHeight="770.0" prefWidth="1240.0" style="-fx-background-color: #1a1a2e;" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookcorner.Controllers.HomeViewController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
+      <RowConstraints maxHeight="46.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="745.0" minHeight="699.0" prefHeight="745.0" />
    </rowConstraints>
    <children>
-      <Pane prefHeight="745.0" prefWidth="1257.0" GridPane.rowIndex="2">
+      <Pane prefHeight="638.0" prefWidth="1240.0" style="-fx-background-color: #1a1a2e;" GridPane.rowIndex="2">
          <children>
-            <Text layoutX="331.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Book-Corner ">
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="290.0" layoutY="103.0" stroke="#e8e0e0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Book-Corner ">
                <font>
-                  <Font size="50.0" />
+                  <Font name="Cambria" size="60.0" />
                </font>
             </Text>
-            <Button fx:id="addBook" layoutX="509.0" layoutY="235.0" mnemonicParsing="false" onAction="#addBookScene" prefHeight="49.0" prefWidth="219.0" text="Add Book">
+            <Button fx:id="addBook" layoutX="509.0" layoutY="235.0" mnemonicParsing="false" onAction="#addBookScene" prefHeight="59.0" prefWidth="253.0" style="-fx-background-color: #e94560;" text="Add Book" textFill="WHITE">
                <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Button layoutX="509.0" layoutY="330.0" mnemonicParsing="false" onAction="#saleInfoScene" prefHeight="49.0" prefWidth="219.0" text="Sell to a customer">
+                  <Font name="Candara Bold" size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="509.0" layoutY="340.0" mnemonicParsing="false" onAction="#saleInfoScene" prefHeight="59.0" prefWidth="253.0" style="-fx-background-color: #e94560;" text="Sell to a customer" textFill="WHITE">
                <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Button layoutX="509.0" layoutY="424.0" mnemonicParsing="false" onAction="#saleReportScene" prefHeight="49.0" prefWidth="219.0" text="View Sales Report">
+                  <Font name="Candara Bold" size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="509.0" layoutY="446.0" mnemonicParsing="false" onAction="#saleReportScene" prefHeight="59.0" prefWidth="253.0" style="-fx-background-color: #e94560;" text="View Sales Report" textFill="WHITE">
                <font>
-                  <Font size="20.0" />
-               </font></Button>
+                  <Font name="Candara Bold" size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
    </children>

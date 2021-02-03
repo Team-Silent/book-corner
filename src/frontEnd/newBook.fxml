@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="768.0" prefWidth="1240.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookcorner.Controllers.NewBookController">
+<GridPane alignment="center" hgap="10" prefHeight="768.0" prefWidth="1240.0" style="-fx-background-color: #1a1a2e;" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookcorner.Controllers.NewBookController">
     <columnConstraints>
         <ColumnConstraints />
     </columnConstraints>
@@ -18,60 +18,60 @@
     <children>
         <Pane prefHeight="745.0" prefWidth="1257.0" GridPane.rowIndex="2">
             <children>
-                <Text layoutX="333.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Title" wrappingWidth="116.0625">
+                <Text fill="#e94560" layoutX="322.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Title" wrappingWidth="116.0625">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></Text>
-                <Text layoutX="333.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" wrappingWidth="116.0625">
+                <Text fill="#e94560" layoutX="321.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Author" wrappingWidth="116.0625">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></Text>
-                <Text layoutX="333.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Purchase Price" wrappingWidth="116.0625">
+                <Text fill="#e94560" layoutX="323.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Purchase  Price" wrappingWidth="135.0625">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></Text>
                 <Group layoutX="380.0" layoutY="283.0" />
                 <Text layoutX="836.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text layoutX="556.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Book" wrappingWidth="152.0556640625">
+                <Text fill="#e94560" layoutX="547.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Book" textAlignment="JUSTIFY" wrappingWidth="222.0556640625">
                     <font>
-                        <Font size="31.0" />
+                        <Font name="Cambria" size="48.0" />
                     </font>
                 </Text>
-                <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" onAction="#backToHome" text="Back" />
-                <Button layoutX="612.0" layoutY="514.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="38.0" prefWidth="93.0" text="Add">
+                <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" onAction="#backToHome" style="-fx-background-color: #dbd8e3;" text="Back" />
+                <Button layoutX="612.0" layoutY="514.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="38.0" prefWidth="93.0" style="-fx-background-color: #dbd8e3;" text="Add">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </Button>
-                <Text layoutX="328.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selling Price" wrappingWidth="104.0625">
+                <Text fill="#e94560" layoutX="322.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selling  Price" wrappingWidth="116.0625">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></Text>
-                <Text layoutX="323.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Quantity" wrappingWidth="135.0625">
+                <Text fill="#e94560" layoutX="323.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Quantity" wrappingWidth="135.0625">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></Text>
-            <TextField fx:id="purchasingPrice" layoutX="487.0" layoutY="258.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="purchasingPrice" layoutX="487.0" layoutY="258.0" prefHeight="38.0" prefWidth="343.0" style="-fx-background-color: #bbe1fa;">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <TextField fx:id="stockQuantity" layoutX="487.0" layoutY="397.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="stockQuantity" layoutX="487.0" layoutY="397.0" prefHeight="38.0" prefWidth="343.0" style="-fx-background-color: #bbe1fa;">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <TextField fx:id="sellingPrice" layoutX="487.0" layoutY="328.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="sellingPrice" layoutX="487.0" layoutY="328.0" prefHeight="38.0" prefWidth="343.0" style="-fx-background-color: #bbe1fa;">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <TextField fx:id="bookTitle" layoutX="487.0" layoutY="121.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="bookTitle" layoutX="487.0" layoutY="121.0" prefHeight="38.0" prefWidth="343.0" style="-fx-background-color: #bbe1fa;">
                <font>
                   <Font size="19.0" />
                </font>
             </TextField>
-            <TextField fx:id="author" layoutX="487.0" layoutY="192.0" prefHeight="38.0" prefWidth="343.0">
+            <TextField fx:id="author" layoutX="487.0" layoutY="192.0" prefHeight="38.0" prefWidth="343.0" style="-fx-background-color: #bbe1fa;">
                <font>
                   <Font size="19.0" />
                </font>
