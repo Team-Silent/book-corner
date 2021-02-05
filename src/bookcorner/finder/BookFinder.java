@@ -46,7 +46,6 @@ public class BookFinder extends Finder <Book> {
 
     @Override
     public Book findByID(String id){
-        Book book = null;
         String query = "Select * from Books where Books.Book_ID = '" + id +"'";
         return getBooks(query).get(0);
     }

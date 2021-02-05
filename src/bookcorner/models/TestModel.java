@@ -9,7 +9,7 @@ public class TestModel {
 
     @Test
     public void testModel() {
-        customer.addToRecords();
+        customer.saveToDatabase();
         Book book = new Book("ABC","DEF",2200,2500,10);
         book.saveToDatabase();
 
