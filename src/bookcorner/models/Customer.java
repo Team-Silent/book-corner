@@ -14,10 +14,6 @@ public class Customer extends Model {
         recordable = true;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
     public String getName() {
         return name;
     }
@@ -39,8 +35,8 @@ public class Customer extends Model {
         if(!recordable) throw new IllegalArgumentException();
 
         databaseConnection.runProcedure("addCustomer("+
-                                    "'"+contactNumber+"'"+","+
                                     "'"+name         +"'"+","+
+                                    "'"+contactNumber+"'"+","+
                                     "'"+address      +"'"+
                                     ")"
         );
