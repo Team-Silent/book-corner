@@ -14,8 +14,16 @@ public class Customer extends Model {
         recordable = true;
     }
 
-    public Customer(String contactNumber){
-        //Todo: query find customer and fill the fields
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public void buy(Book book){
@@ -27,7 +35,7 @@ public class Customer extends Model {
                 );
     }
 
-    public void addToRecords(){
+    public void saveToDatabase(){
         if(!recordable) throw new IllegalArgumentException();
 
         databaseConnection.runProcedure("addCustomer("+
