@@ -1,5 +1,10 @@
 package bookcorner.models;
 
+import bookcorner.database.DatabaseConnection;
+import bookcorner.finder.BookFinder;
+import bookcorner.finder.CustomerFinder;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -8,13 +13,44 @@ public class Sale extends Model{
     Customer customer;
     Date date;
     boolean databaseAddable = false;
-    List<Book> bookList;
+    List<Book> bookList=new ArrayList<>();
+
+    public String getId() {
+        return id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public boolean isDatabaseAddable() {
+        return databaseAddable;
+    }
+
+    public List<Book> getBookList() {
+        return bookList;
+    }
 
     public Sale(Customer customer, List<Book> bookList) {
         this.customer = customer;
         this.bookList = bookList;
         databaseAddable = true;
+        databaseConnection = new DatabaseConnection();
     }
+
+    public Sale(String id, String customerID, List<String> bookIDs){
+        customer = new CustomerFinder().findByID(customerID);
+        this.id = id;
+        for (String bookID: bookIDs){
+            bookList.add(new BookFinder().findByID(bookID));
+        }
+    }
+
+
 
 
 

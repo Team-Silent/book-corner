@@ -18,6 +18,8 @@ public class CustomerFinder extends Finder<Customer> {
     @Override
     public Customer findByID(String id) {
         String query = "Select * from customers where Contact_Number = '" + id +"'";
+        List<Customer> foundCustomers =getCustomers(query);
+        if(foundCustomers.size()==0) return null;
         return getCustomers(query).get(0);
     }
 

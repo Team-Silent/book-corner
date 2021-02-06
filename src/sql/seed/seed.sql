@@ -18,3 +18,4 @@ insert into SALES values (3,4,sysdate);
 insert into SALES values (4,1,sysdate);
 insert into SALES values (5,3,sysdate);
 insert into SALES values (6,5,sysdate);
+

@@ -2,6 +2,7 @@ package bookcorner.finder;
 
 import bookcorner.models.Book;
 import bookcorner.models.Customer;
+import bookcorner.models.Sale;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -18,6 +19,19 @@ public class FinderTester {
         Assertions.assertEquals(book.getId(),foundBook.getId());
         Assertions.assertEquals(book.getTitle(),foundBook.getTitle());
         Assertions.assertEquals(book.getPurchasingPrice(),foundBook.getPurchasingPrice());
+
+    }
+
+    @Test
+    public void testSaleFinder(){
+        SaleFinder saleFinder = new SaleFinder(6,2,2021);
+        List<Sale> sales = saleFinder.findAll();
+        System.out.println("size: "+sales.size());
+        printSales(sales);
+    }
+
+    @Test
+    public void testCustomerFinder(){
         Customer customer = new Customer("123232323","louuu","Korfu");
         customer.saveToDatabase();
         Customer customer2 = new CustomerFinder().findByID("123232323");
@@ -25,6 +39,18 @@ public class FinderTester {
         Assertions.assertEquals(customer.getName(),customer2.getName());
         Assertions.assertEquals(customer.getAddress(),customer2.getAddress());
         printCustomers(new CustomerFinder().findAll());
+    }
+
+
+    private void printSales(List<Sale> sales) {
+        for (Sale sale:sales){
+            System.out.println("HELLO");
+            if(sale.getCustomer()!=null)
+            System.out.println("SaleID:"+sale.getId()+" Name: "+sale.getCustomer().getName());
+            for (Book book: sale.getBookList()){
+                System.out.println(book.getTitle());
+            }
+        }
     }
 
     private void printCustomers(List<Customer> customers) {
@@ -38,5 +64,6 @@ public class FinderTester {
             System.out.println(book.getId() + " " + book.getTitle()+" " + book.getAuthor()+" " + book.getQuantity());
         }
     }
+
 
 }

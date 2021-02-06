@@ -1,5 +1,6 @@
 package bookcorner.models;
 
+import bookcorner.database.DatabaseConnection;
 import bookcorner.finder.BookFinder;
 
 public class Book extends Model{
@@ -10,7 +11,7 @@ public class Book extends Model{
     private int sellingPrice;
     private int quantity;
     private int stock;
-    boolean updatable = false;
+    boolean updatable;
 
     public Book(String title, String author, int purchasingPrice, int sellingPrice, int quantity) {
         this.title = title;
@@ -20,6 +21,7 @@ public class Book extends Model{
         this.quantity = quantity;
         this.id = title+author;
         updatable = true;
+        databaseConnection = new DatabaseConnection();
     }
 
     private void syncFromDatabase(){
