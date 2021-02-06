@@ -92,6 +92,7 @@ public class SaleInfoController implements Initializable {
         String customerAddress=cust_address.getText();
         System.out.println(customerName+" "+customerContact+" "+customerAddress);
         customer=new Customer(customerContact,customerName,customerAddress);
+        customer.saveToDatabase();
     }
 
     public String bookList(ActionEvent actionEvent) {
