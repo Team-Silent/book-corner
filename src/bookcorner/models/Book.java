@@ -24,6 +24,10 @@ public class Book extends Model{
         databaseConnection = new DatabaseConnection();
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     private void syncFromDatabase(){
        Book foundBook = new BookFinder().findByID(id);
        this.purchasingPrice = foundBook.purchasingPrice;

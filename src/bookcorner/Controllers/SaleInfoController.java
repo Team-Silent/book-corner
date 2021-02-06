@@ -106,11 +106,13 @@ public class SaleInfoController implements Initializable {
         {
             Book bookDetails=bookRecord.findByID(book);
             selectedBooks.add(book);
-            bookList.add(bookDetails);
+
             // add new book to the list
             int quantity = Integer.parseInt(bookQuantity.getText());
             int price=bookDetails.getSellingPrice();
             int totalPrice = quantity * price;
+            bookDetails.setQuantity(quantity);
+            bookList.add(bookDetails);
             allPriceTotal.add(totalPrice);
             CashMemo cashMemo=new CashMemo(book,price,quantity,totalPrice);
             bookCashMemo.add(cashMemo);
