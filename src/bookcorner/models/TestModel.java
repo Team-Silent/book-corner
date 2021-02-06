@@ -12,7 +12,8 @@ public class TestModel {
     Customer customer = new Customer("123","abc","def");
 
     @Test
-    public void testModel() {
+    public void testModel() throws InterruptedException {
+       // wait(500);
         customer.saveToDatabase();
         Book book = new Book("ABC","DEF",2200,2500,10);
         book.saveToDatabase();

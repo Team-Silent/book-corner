@@ -23,7 +23,8 @@ public class FinderTester {
     }
 
     @Test
-    public void testSaleFinder(){
+    public void testSaleFinder() throws InterruptedException {
+
         SaleFinder saleFinder = new SaleFinder(6,2,2021);
         List<Sale> sales = saleFinder.findAll();
         System.out.println("size: "+sales.size());
@@ -49,7 +50,7 @@ public class FinderTester {
         for (Sale sale:sales){
             System.out.println("HELLO");
             if(sale.getCustomer()!=null)
-            System.out.println("SaleID:"+sale.getId()+" Name: "+sale.getCustomer().getName());
+            System.out.println("SaleID:"+sale.getId()+" Name: "+sale.getCustomer().getName() +" "+sale.getTransaction());
             for (Book book: sale.getBookList()){
                 System.out.println(book.getId()+" "+book.getTitle()+" "+book.getAuthor()+" "+book.getQuantity());
             }
