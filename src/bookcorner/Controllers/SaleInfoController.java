@@ -104,7 +104,7 @@ public class SaleInfoController implements Initializable {
         String book=bookList(actionEvent);
         if(!selectedBooks.contains(book))
         {
-            Book bookDetails=bookRecord.findByTitle(book);
+            Book bookDetails=bookRecord.findByID(book);
             selectedBooks.add(book);
             bookList.add(bookDetails);
             // add new book to the list
@@ -130,7 +130,7 @@ public class SaleInfoController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         for(Book b:bookFinder.findAll()){
-            bookName.getItems().add(b.getTitle());
+            bookName.getItems().add(b.getId());
         }
 
         tv_bookName.setCellValueFactory(new PropertyValueFactory<ViewSaleInfo,String>("bookName"));

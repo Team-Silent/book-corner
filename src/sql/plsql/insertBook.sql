@@ -8,7 +8,7 @@ CREATE OR REPLACE PROCEDURE insertBook(
 
     found_stock int;
     found int;
-    v_id varchar2(256):=p_title||p_author;
+    v_id varchar2(256):=p_title||' by '||p_author;
 
 BEGIN
     select case
