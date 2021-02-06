@@ -27,8 +27,12 @@ public class Sale extends Model{
         return date;
     }
 
-    public boolean isDatabaseAddable() {
-        return databaseAddable;
+    public int getTransaction(){
+        return 0;
+    }
+
+    public int getTime(){
+        return 0;
     }
 
     public List<Book> getBookList() {

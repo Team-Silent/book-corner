@@ -25,6 +25,11 @@ public class SaleFinder extends Finder<Sale>{
 
 
 
+
+
+
+
+
     @Override
     public List<Sale> findAll() {
         String query = "SELECT Sales_id, Customer_id, TO_CHAR( Sales_Date, 'HH24:MI:SS' )\n" +
