@@ -1,11 +1,10 @@
 package bookcorner.Controllers;
 import bookcorner.finder.BookFinder;
+import bookcorner.functionalities.Buy;
 import bookcorner.functionalities.CashMemo;
 import bookcorner.models.Book;
 import bookcorner.models.Customer;
-import frontEnd.TableView.ViewCashMemo;
 import frontEnd.TableView.ViewSaleInfo;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +20,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class SaleInfoController implements Initializable {
@@ -60,16 +58,21 @@ public class SaleInfoController implements Initializable {
     public void cashMemoScene(ActionEvent actionEvent) throws IOException {
 //        Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/cashMemo.fxml"));
 //        Scene scene=new Scene(saleReportView);
+        createCustomerRecord();
+        // test
+        System.out.println(selectedBooks);
 
         FXMLLoader loader=new FXMLLoader(getClass().getResource("../../frontEnd/cashMemo.fxml"));
         Parent root=loader.load();
-
+        Buy buy = new Buy(customer,bookList);
+        buy.makePurchase();
         CashMemoController cashMemoController=loader.getController();
 
         cashMemoController.displayInfo(cust_name.getText(),cust_address.getText(),getTotalPrice(),bookCashMemo);
         Stage window =(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
+
     }
 
     public ArrayList<Book> getBookList(){
@@ -77,17 +80,18 @@ public class SaleInfoController implements Initializable {
     }
 
     public void saveButtonClicked(ActionEvent actionEvent) {
-        String customerName=cust_name.getText();
-        String customerContact=cust_contact.getText();
-        String customerAddress=cust_address.getText();
-        System.out.println(customerName+" "+customerContact+" "+customerAddress);
-        createCustomerRecord(customerName,customerContact,customerAddress);
+
+        createCustomerRecord();
         // test
         System.out.println(selectedBooks);
     }
 
-    public void createCustomerRecord(String name,String contact,String address){
-        customer=new Customer(contact,name,address);
+    public void createCustomerRecord(){
+        String customerName=cust_name.getText();
+        String customerContact=cust_contact.getText();
+        String customerAddress=cust_address.getText();
+        System.out.println(customerName+" "+customerContact+" "+customerAddress);
+        customer=new Customer(customerContact,customerName,customerAddress);
     }
 
     public String bookList(ActionEvent actionEvent) {

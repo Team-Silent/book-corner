@@ -10,7 +10,8 @@ import java.util.List;
 
 public class FinderTester {
     @Test
-    public void testBookFinder(){
+    public void testBookFinder() throws InterruptedException {
+        Thread.sleep(100);
         BookFinder bookFinder = new BookFinder();
         printBooks(bookFinder.findAll());
         Book book = new Book("a_title","an_author",1000,1200,3);
@@ -32,7 +33,8 @@ public class FinderTester {
     }
 
     @Test
-    public void testCustomerFinder(){
+    public void testCustomerFinder() throws InterruptedException {
+        Thread.sleep(100);
         Customer customer = new Customer("123232323","louuu","Korfu");
         customer.saveToDatabase();
         Customer customer2 = new CustomerFinder().findByID("123232323");
