@@ -12,9 +12,10 @@ public class FinderTester {
     @Test
     public void findSaleByIDTest(){
         SaleFinder saleFinder = new SaleFinder(2,6,2021);
-        Sale sale = saleFinder.findByID("178");
-        System.out.println("Hello World");
+        Sale sale = saleFinder.findByID("180");
         System.out.println(sale.getCustomer().getName());
+        List<Book> bookList = sale.getBookList();
+        printBooks(bookList);
     }
 
     @Test
