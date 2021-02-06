@@ -9,14 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 public class FinderTester {
-    @Test
-    public void findSaleByIDTest(){
-        SaleFinder saleFinder = new SaleFinder(2,6,2021);
-        Sale sale = saleFinder.findByID("180");
-        System.out.println(sale.getCustomer().getName());
-        List<Book> bookList = sale.getBookList();
-        printBooks(bookList);
-    }
+
 
     @Test
     public void testBookFinder() throws InterruptedException {
@@ -25,7 +18,7 @@ public class FinderTester {
         printBooks(bookFinder.findAll());
         Book book = new Book("a_title","an_author",1000,1200,3);
         book.saveToDatabase();
-        Book foundBook = bookFinder.findByID("a_titlean_author");
+        Book foundBook = bookFinder.findByID("a_title by an_author");
         Assertions.assertEquals(book.getId(),foundBook.getId());
         Assertions.assertEquals(book.getTitle(),foundBook.getTitle());
         Assertions.assertEquals(book.getPurchasingPrice(),foundBook.getPurchasingPrice());

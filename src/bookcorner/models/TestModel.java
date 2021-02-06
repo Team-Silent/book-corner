@@ -22,11 +22,9 @@ public class TestModel {
         buy.makePurchase();
 
         List<Book> bookList = new ArrayList<>();
-        bookList.add(new Book("book1author1",3));
-        bookList.add(new Book("book2author2",2));
-        bookList.add(new Book("book5author5",10));
+        bookList.add(new Book("ABC by DEF",3));
         Sale sale = new Sale(customer,bookList);
-        Assertions.assertEquals(70500,sale.getTransaction());
+        Assertions.assertEquals(7500,sale.getTransaction());
 
     }
 
