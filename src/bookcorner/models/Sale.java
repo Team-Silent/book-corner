@@ -12,6 +12,7 @@ public class Sale extends Model{
     String id;
     Customer customer;
     Date date;
+    String time;
     boolean databaseAddable = false;
     List<Book> bookList;
 
@@ -35,8 +36,8 @@ public class Sale extends Model{
         return transaction;
     }
 
-    public int getTime(){
-        return 0;
+    public String getTime(){
+        return time;
     }
 
     public List<Book> getBookList() {
@@ -50,10 +51,11 @@ public class Sale extends Model{
         databaseConnection = new DatabaseConnection();
     }
 
-    public Sale(String id, String customerID, List<Book> books){
+    public Sale(String id, String customerID, String time, List<Book> books){
         customer = new CustomerFinder().findByID(customerID);
         this.id = id;
         this.bookList=books;
+        this.time = time;
     }
 
 

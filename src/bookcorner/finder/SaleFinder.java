@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SaleFinder extends Finder<Sale>{
     String date;
-    private List<SaleCustomer> saleCustomerInfoList = new ArrayList<>();
+    private List<SaleInfo> saleInfoInfoList = new ArrayList<>();
     private List<Sale> saleArrayList = new ArrayList<>();
 
     SaleFinder(int day, int month, int year){
@@ -32,7 +32,7 @@ public class SaleFinder extends Finder<Sale>{
 
     @Override
     public List<Sale> findAll() {
-        String query = "SELECT Sales_id, Customer_id, TO_CHAR( Sales_Date, 'HH24:MI:SS' )\n" +
+        String query = "SELECT Sales_id, Customer_id, TO_CHAR( Sales_Date, 'HH24:MI:SS' ) as Time\n" +
                 "From Sales\n" +
                 "Where TO_CHAR(Sales_Date,'DD-MM-YYYY')= '"+date+"'";
         return getSales(query);
@@ -48,8 +48,8 @@ public class SaleFinder extends Finder<Sale>{
             while (resultSet.next()){
                 addToInfoList(resultSet);
             }
-            for (SaleCustomer saleCustomer: saleCustomerInfoList){
-                saleArrayList.add(createSale(saleCustomer));
+            for (SaleInfo saleInfo : saleInfoInfoList){
+                saleArrayList.add(createSale(saleInfo));
             }
         }
         catch (SQLException e){
@@ -59,9 +59,9 @@ public class SaleFinder extends Finder<Sale>{
         return saleArrayList;
     }
 
-    private Sale createSale(SaleCustomer saleCustomer) {
+    private Sale createSale(SaleInfo saleInfo) {
         List<Book> books = new ArrayList<>();
-        String query = "SELECT Book_id, Quantity FROM Book_Sales_junction Where Sales_id = '" + saleCustomer.saleID+"'";
+        String query = "SELECT Book_id, Quantity FROM Book_Sales_junction Where Sales_id = '" + saleInfo.saleID+"'";
         databaseConnection.connect();
         ResultSet resultSet = databaseConnection.runQuery(query);
         try {
@@ -73,11 +73,11 @@ public class SaleFinder extends Finder<Sale>{
         catch (SQLException e){
             e.printStackTrace();
         }
-        return new Sale(saleCustomer.saleID,saleCustomer.customerID,books);
+        return new Sale(saleInfo.saleID, saleInfo.customerID,saleInfo.time, books);
     }
 
     private void addToInfoList(ResultSet resultSet) throws SQLException {
-        saleCustomerInfoList.add(new SaleCustomer(resultSet.getString("sales_ID"),resultSet.getString("customer_id")));
+        saleInfoInfoList.add(new SaleInfo(resultSet.getString("sales_ID"),resultSet.getString("customer_id"), resultSet.getString("Time")));
     }
 
     private List<String> getSaleBookS() {
@@ -90,13 +90,6 @@ public class SaleFinder extends Finder<Sale>{
         return null;
     }
 
-    public Sale findByTitle(String title){
-        Book book = null;
-        String query = "Select * from Books where Books.title = '" + title +"'";
-        return null;
-    }
-
-
 
     @Override
     public List<Sale> findByProperty(String columnName, String value){
@@ -106,14 +99,18 @@ public class SaleFinder extends Finder<Sale>{
 
 
 
-    class SaleCustomer{
+    class SaleInfo {
         String saleID;
         String customerID;
+        String time;
 
-        public SaleCustomer(String saleID, String customerID) {
+        public SaleInfo(String saleID, String customerID,String time) {
             this.saleID = saleID;
             this.customerID = customerID;
+            this.time = time;
         }
+
+
     }
 }
 
