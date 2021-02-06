@@ -10,6 +10,14 @@ import java.util.List;
 
 public class FinderTester {
     @Test
+    public void findSaleByIDTest(){
+        SaleFinder saleFinder = new SaleFinder(2,6,2021);
+        Sale sale = saleFinder.findByID("178");
+        System.out.println("Hello World");
+        System.out.println(sale.getCustomer().getName());
+    }
+
+    @Test
     public void testBookFinder() throws InterruptedException {
         Thread.sleep(100);
         BookFinder bookFinder = new BookFinder();
@@ -70,6 +78,8 @@ public class FinderTester {
             System.out.println(book.getId() + " " + book.getTitle()+" " + book.getAuthor()+" " + book.getQuantity());
         }
     }
+
+
 
 
 }
