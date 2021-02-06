@@ -39,6 +39,9 @@ public class FinderTester {
         Assertions.assertEquals(customer.getName(),customer2.getName());
         Assertions.assertEquals(customer.getAddress(),customer2.getAddress());
         printCustomers(new CustomerFinder().findAll());
+        List<Sale> saleList = new SaleFinder(1,2,2021).findAll();
+
+
     }
 
 
@@ -48,7 +51,7 @@ public class FinderTester {
             if(sale.getCustomer()!=null)
             System.out.println("SaleID:"+sale.getId()+" Name: "+sale.getCustomer().getName());
             for (Book book: sale.getBookList()){
-                System.out.println(book.getTitle());
+                System.out.println(book.getId()+" "+book.getTitle()+" "+book.getAuthor()+" "+book.getQuantity());
             }
         }
     }

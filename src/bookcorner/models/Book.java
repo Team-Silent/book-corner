@@ -28,6 +28,8 @@ public class Book extends Model{
        Book foundBook = new BookFinder().findByID(id);
        this.purchasingPrice = foundBook.purchasingPrice;
        this.sellingPrice = foundBook.sellingPrice;
+       this.title=foundBook.title;
+       this.author=foundBook.author;
        this.stock = foundBook.quantity;
     }
 
@@ -39,7 +41,7 @@ public class Book extends Model{
        this(title+author,quantity);
     }
 
-    Book(String id, int quantity){
+    public Book(String id, int quantity){
         this.id = id;
         this.quantity = quantity;
         syncFromDatabase();

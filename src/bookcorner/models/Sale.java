@@ -13,7 +13,7 @@ public class Sale extends Model{
     Customer customer;
     Date date;
     boolean databaseAddable = false;
-    List<Book> bookList=new ArrayList<>();
+    List<Book> bookList;
 
     public String getId() {
         return id;
@@ -28,7 +28,11 @@ public class Sale extends Model{
     }
 
     public int getTransaction(){
-        return 0;
+        int transaction = 0;
+        for (Book book:bookList){
+            transaction+= book.getTotalSellingPrice();
+        }
+        return transaction;
     }
 
     public int getTime(){
@@ -46,12 +50,10 @@ public class Sale extends Model{
         databaseConnection = new DatabaseConnection();
     }
 
-    public Sale(String id, String customerID, List<String> bookIDs){
+    public Sale(String id, String customerID, List<Book> books){
         customer = new CustomerFinder().findByID(customerID);
         this.id = id;
-        for (String bookID: bookIDs){
-            bookList.add(new BookFinder().findByID(bookID));
-        }
+        this.bookList=books;
     }
 
 

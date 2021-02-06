@@ -60,13 +60,14 @@ public class SaleFinder extends Finder<Sale>{
     }
 
     private Sale createSale(SaleCustomer saleCustomer) {
-        List<String> books = new ArrayList<>();
+        List<Book> books = new ArrayList<>();
         String query = "SELECT Book_id, Quantity FROM Book_Sales_junction Where Sales_id = '" + saleCustomer.saleID+"'";
         databaseConnection.connect();
         ResultSet resultSet = databaseConnection.runQuery(query);
         try {
             while (resultSet.next()){
-                books.add(resultSet.getString("Book_id"));
+                Book book = new Book(resultSet.getString("Book_id"),resultSet.getInt("QUANTITY"));
+                books.add(book);
             }
         }
         catch (SQLException e){
