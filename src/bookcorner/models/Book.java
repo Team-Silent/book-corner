@@ -19,7 +19,7 @@ public class Book extends Model{
         this.purchasingPrice = purchasingPrice;
         this.sellingPrice = sellingPrice;
         this.quantity = quantity;
-        this.id = title+author;
+        this.id = title+" by "+author;
         updatable = true;
         databaseConnection = new DatabaseConnection();
     }
