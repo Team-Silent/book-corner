@@ -5,9 +5,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1169.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookcorner.Controllers.SaleDetailsController">
+<AnchorPane prefHeight="600.0" prefWidth="1169.0" style="-fx-background-color: #1a1a2e;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookcorner.Controllers.SaleDetailsController">
     <children>
-        <TableView fx:id="saleDetailsTableView" layoutX="141.0" layoutY="97.0" prefHeight="407.0" prefWidth="888.0">
+        <TableView fx:id="saleDetailsTableView" layoutX="141.0" layoutY="97.0" prefHeight="407.0" prefWidth="888.0" style="-fx-background-color: #bbe1fa;">
             <columns>
                 <TableColumn fx:id="tv_bookTitle" prefWidth="448.0" text="Book Title" />
                 <TableColumn fx:id="tv_quantity" prefWidth="214.0" text="Quantity" />

@@ -65,7 +65,7 @@ public class SalesReportController implements Initializable {
             bookList=s.getBookList();
             int total=0;
             for(Book b:bookList) {
-                System.out.println(b.getId() +" "+b.getQuantity());
+                System.out.println(b.getId() +"******"+b.getQuantity());
                 total += (b.getSellingPrice()*b.getQuantity());
             }
             ViewSalesReport record=new ViewSalesReport(s.getCustomer().getName(),s.getTransaction(),s.getId(),s.getTime());

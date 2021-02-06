@@ -114,7 +114,7 @@ public class SaleInfoController implements Initializable {
             bookDetails.setQuantity(quantity);
             bookList.add(bookDetails);
             allPriceTotal.add(totalPrice);
-            CashMemo cashMemo=new CashMemo(book,price,quantity,totalPrice);
+            CashMemo cashMemo = new CashMemo(book, price, quantity, totalPrice);
             bookCashMemo.add(cashMemo);
             ViewSaleInfo record = new ViewSaleInfo(bookDetails.getTitle(), bookDetails.getAuthor(), quantity, price, totalPrice);
             saleInfoTableView.getItems().add(record);

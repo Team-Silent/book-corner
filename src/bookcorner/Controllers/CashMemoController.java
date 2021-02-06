@@ -19,7 +19,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class CashMemoController implements Initializable {
@@ -35,6 +37,7 @@ public class CashMemoController implements Initializable {
     public TableColumn<ViewCashMemo,Integer> tv_price;
     public TableColumn<ViewCashMemo,Integer> tv_quantity;
     public TableColumn<ViewCashMemo,Integer> tv_amount;
+    public Label invoiceNumber;
 
     ArrayList<Book> bookList=new ArrayList<>();
     SaleInfoController saleInfoController=new SaleInfoController();
@@ -53,8 +56,9 @@ public class CashMemoController implements Initializable {
          cust_add.setText(address);
          invoiceTotal.setText(String.valueOf(totalPrice));
          total_amount.setText(String.valueOf(totalPrice));
-
-        getBooks(books);
+         getIssueDate();
+         getInvoiceNumber();
+         getBooks(books);
 
     }
 
@@ -77,6 +81,18 @@ public class CashMemoController implements Initializable {
          }
          cashMemoTableView.setItems(allPurchasedBooks);
      }
+     private void getIssueDate(){
+         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy/MM/dd");
+         Date date=new Date();
+         issueDate.setText(simpleDateFormat.format(date));
+         System.out.println(simpleDateFormat.format(date));
+     }
+     private void getInvoiceNumber(){
+         int min = 1000000;
+         int max = 9999999;
+         int number = (int)(Math.random()*(max-min+1)+min);
 
+         invoiceNumber.setText(String.valueOf(number));
 
+     }
 }

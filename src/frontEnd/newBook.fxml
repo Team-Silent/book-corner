@@ -37,8 +37,8 @@
                         <Font name="Cambria" size="48.0" />
                     </font>
                 </Text>
-                <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" onAction="#backToHome" style="-fx-background-color: #dbd8e3;" text="Back" />
-                <Button layoutX="612.0" layoutY="514.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="38.0" prefWidth="93.0" style="-fx-background-color: #dbd8e3;" text="Add">
+                <Button layoutX="46.0" layoutY="681.0" mnemonicParsing="false" onAction="#backToHome" style="-fx-background-color: #e94560;" text="Back" textFill="WHITE" />
+                <Button layoutX="612.0" layoutY="514.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="38.0" prefWidth="93.0" style="-fx-background-color: #e94560;" text="Add" textFill="WHITE">
                     <font>
                         <Font size="17.0" />
                     </font>
