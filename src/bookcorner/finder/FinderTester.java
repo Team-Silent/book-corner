@@ -24,7 +24,7 @@ public class FinderTester {
     }
 
     @Test
-    public void testSaleFinder() throws InterruptedException {
+    public void testSaleFinder() {
 
         SaleFinder saleFinder = new SaleFinder(6,2,2021);
         List<Sale> sales = saleFinder.findAll();
@@ -52,7 +52,7 @@ public class FinderTester {
         for (Sale sale:sales){
             System.out.println("HELLO");
             if(sale.getCustomer()!=null)
-            System.out.println("SaleID:"+sale.getId()+" Name: "+sale.getCustomer().getName() +" "+sale.getTransaction());
+            System.out.println("SaleID:"+sale.getId()+" Name: "+sale.getCustomer().getName() +" "+sale.getTransaction()+" time: " +sale.getTime() );
             for (Book book: sale.getBookList()){
                 System.out.println(book.getId()+" "+book.getTitle()+" "+book.getAuthor()+" "+book.getQuantity());
             }
