@@ -25,12 +25,12 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Button fx:id="viewReport" layoutX="536.0" layoutY="235.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="121.0" text="View Report">
+      <Button fx:id="viewReport" layoutX="536.0" layoutY="235.0" mnemonicParsing="false" onAction="#onViewReportClick" prefHeight="42.0" prefWidth="121.0" text="View Report">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <TableView editable="true" layoutX="162.0" layoutY="337.0" prefHeight="323.0" prefWidth="916.0">
+      <TableView fx:id="salesReportTableView" editable="true" layoutX="162.0" layoutY="337.0" prefHeight="323.0" prefWidth="916.0">
         <columns>
           <TableColumn fx:id="customer" minWidth="-1.0" prefWidth="187.0" text="Customer" />
           <TableColumn fx:id="time" minWidth="-1.0" prefWidth="207.0" text="Time" />

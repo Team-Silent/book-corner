@@ -19,3 +19,31 @@ insert into SALES values (4,1,sysdate);
 insert into SALES values (5,3,sysdate);
 insert into SALES values (6,5,sysdate);
 
+insert into Book_Customer_Junction values ('book4author4',3,10);
+insert into Book_Customer_Junction values ('book5author5',2,8);
+insert into Book_Customer_Junction values ('book4author4',2,4);
+insert into Book_Customer_Junction values ('book1author1',1,2);
+insert into Book_Customer_Junction values ('book3author3',4,6);
+insert into Book_Customer_Junction values ('book2author2',4,8);
+insert into Book_Customer_Junction values ('book3author3',5,5);
+insert into Book_Customer_Junction values ('book4author4',5,4);
+insert into Book_Customer_Junction values ('book5author5',1,4);
+insert into Book_Customer_Junction values ('book2author2',5,1);
+
+/* Some values gives error ...*/
+insert into book_sales_junction values ('book5author5',3,8);
+insert into book_sales_junction values ('book5author5',3,1);
+insert into book_sales_junction values ('book3author3',3,3);
+insert into book_sales_junction values ('book2author2',1,4);
+insert into book_sales_junction values ('book1author1',1,4);
+insert into book_sales_junction values ('book5author5',2,2);
+insert into book_sales_junction values ('book2author2',2,1);
+insert into book_sales_junction values ('book3author3',2,2);
+insert into book_sales_junction values ('book1author1',4,5);
+insert into book_sales_junction values ('book5author5',4,3);
+insert into book_sales_junction values ('book2author2',5,4);
+insert into book_sales_junction values ('book3author3',5,5);
+insert into book_sales_junction values ('book5author5',5,1);
+insert into book_sales_junction values ('book3author3',6,3);
+insert into book_sales_junction values ('book1author1',6,1);
+insert into book_sales_junction values ('book4author4',6,5);

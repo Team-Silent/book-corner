@@ -13,7 +13,7 @@ public class SaleFinder extends Finder<Sale>{
     private List<SaleInfo> saleInfoInfoList = new ArrayList<>();
     private List<Sale> saleArrayList = new ArrayList<>();
 
-    SaleFinder(int day, int month, int year){
+    public SaleFinder(int day, int month, int year){
         String dayString = String.valueOf(day);
         String monthString = String.valueOf(month);
         String yearString = String.valueOf(year);
