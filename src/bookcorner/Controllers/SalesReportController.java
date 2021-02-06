@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -31,6 +32,7 @@ public class SalesReportController implements Initializable {
     public TableColumn<ViewSalesReport,String> time;
     public TableColumn<ViewSalesReport,Integer> transaction;
     public TableColumn<ViewSalesReport,String> saleInfo;
+    public Label totalSale;
 
     private List<Sale> saleArrayList = new ArrayList<>();
     List<Book> bookList=new ArrayList<>();
@@ -52,19 +54,18 @@ public class SalesReportController implements Initializable {
 
         SaleFinder saleFinder=new SaleFinder(day,month,year);
         saleArrayList=saleFinder.findAll();
+        int total=0;
 
         for(Sale s:saleArrayList){
             bookList=s.getBookList();
-            int total=0;
-            for(Book b:bookList){
-                total+=b.getSellingPrice();
+            for(Book b:bookList) {
+                total += b.getSellingPrice();
             }
-            ViewSalesReport record=new ViewSalesReport(s.getCustomer().getName(),total,s.getId());
+            ViewSalesReport record=new ViewSalesReport(s.getCustomer().getName(),total,s.getId(),s.getTime());
             salesReportTableView.getItems().add(record);
         }
 
-        
-
+        totalSale.setText(String.valueOf(total));
     }
 
 
@@ -73,5 +74,6 @@ public class SalesReportController implements Initializable {
         customer.setCellValueFactory(new PropertyValueFactory<>("customerName"));
         transaction.setCellValueFactory(new PropertyValueFactory<>("transaction"));
         saleInfo.setCellValueFactory(new PropertyValueFactory<>("saleInfo"));
+        time.setCellValueFactory(new PropertyValueFactory<>("time"));
     }
 }

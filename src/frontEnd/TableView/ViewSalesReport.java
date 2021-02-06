@@ -6,10 +6,11 @@ public class ViewSalesReport {
     Integer transaction;
     String saleInfo;
 
-    public ViewSalesReport(String customerName,Integer transaction,String saleInfo) {
+    public ViewSalesReport(String customerName,Integer transaction,String saleInfo,String time) {
         this.customerName = customerName;
         this.transaction=transaction;
         this.saleInfo=saleInfo;
+        this.time=time;
     }
 
     public String getCustomerName() {
