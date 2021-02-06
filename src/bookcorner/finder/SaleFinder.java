@@ -92,8 +92,10 @@ public class SaleFinder extends Finder<Sale>{
 
     @Override
     public List<Sale> findByProperty(String columnName, String value){
-        String query = "Select * from Books where"+ "Books."+ columnName +"= '" + value +"'";
-        return null;
+        String query = "SELECT Sales_id, Customer_id, TO_CHAR( Sales_Date, 'HH24:MI:SS' ) as Time " +
+                "From Sales " +
+                "Where "+ "Sales."+ columnName +"= '" + value +"'";
+        return getSales(query);
     }
 
 
