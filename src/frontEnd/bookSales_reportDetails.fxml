@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookcorner.Controllers.CashMemoController">
+    <children>
+        <TableView fx:id="cashMemoTableView" layoutX="176.0" layoutY="97.0" prefHeight="407.0" prefWidth="888.0">
+            <columns>
+                <TableColumn fx:id="tv_bookTitle" prefWidth="568.0" text="Book Title" />
+                <TableColumn fx:id="tv_quantity" prefWidth="319.0" text="Quantity" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
