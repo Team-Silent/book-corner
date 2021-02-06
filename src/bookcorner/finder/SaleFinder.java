@@ -83,7 +83,7 @@ public class SaleFinder extends Finder<Sale>{
     public Sale findByID(String id){
         String query = "SELECT Sales_id, Customer_id, TO_CHAR( Sales_Date, 'HH24:MI:SS' ) as Time\n" +
                 "From Sales\n" +
-                "Where TO_CHAR(Sales_Date,'DD-MM-YYYY')= '"+date+"' AND Sales_ID = "+"'"+id+"'" ;
+                "Where Sales_ID = "+"'"+id+"'" ;
 
         return getSales(query).get(0);
 
