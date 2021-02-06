@@ -38,16 +38,21 @@
             <TableColumn fx:id="saleInfo" minWidth="-1.0" prefWidth="269.0" text="Sale Information" />
         </columns>
       </TableView>
-      <Label layoutX="520.0" layoutY="679.0" prefHeight="42.0" prefWidth="121.0" text="Total Sale :  ">
+      <Label layoutX="523.0" layoutY="679.0" prefHeight="42.0" prefWidth="171.0" text="Total Sale :  " textAlignment="CENTER">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font size="23.0" />
          </font>
       </Label>
-      <Label fx:id="totalSale" layoutX="635.0" layoutY="685.0" prefHeight="31.0" prefWidth="121.0" text="0">
+      <Label fx:id="totalSale" layoutX="644.0" layoutY="681.0" prefHeight="38.0" prefWidth="134.0" text="0">
          <font>
-            <Font size="21.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Button layoutX="22.0" layoutY="716.0" mnemonicParsing="false" onAction="#backToHome" text="Back " />
+      <Button layoutX="22.0" layoutY="716.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="31.0" prefWidth="58.0" text="Back " />
+      <Button layoutX="1066.0" layoutY="700.0" mnemonicParsing="false" onAction="#onViewDetailsClicked" prefHeight="42.0" prefWidth="152.0" text="View Details">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

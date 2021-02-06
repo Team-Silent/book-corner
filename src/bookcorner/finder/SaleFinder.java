@@ -23,7 +23,8 @@ public class SaleFinder extends Finder<Sale>{
         this.date = dayString+"-"+monthString+"-"+yearString;
     }
 
-
+    public SaleFinder() {
+    }
 
     @Override
     public List<Sale> findAll() {

@@ -64,6 +64,4 @@ public class BookFinder extends Finder <Book> {
         return getBooks(query);
     }
 
-
-
 }
