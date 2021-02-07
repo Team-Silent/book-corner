@@ -26,9 +26,17 @@ public class NewBookController {
 
         String title=bookTitle.getText();
         String bookAuthor=author.getText();
-        int purchase=Integer.parseInt(purchasingPrice.getText());
-        int sell=Integer.parseInt(sellingPrice.getText());
-        int quantity=Integer.parseInt(stockQuantity.getText());
+        int purchase=0,sell=0,quantity=0;
+        try {
+             purchase=Integer.parseInt(purchasingPrice.getText());
+             sell=Integer.parseInt(sellingPrice.getText());
+             quantity=Integer.parseInt(stockQuantity.getText());
+        }
+        catch (NumberFormatException e){
+            System.out.println(e);
+            System.out.println("Incorrect Values");
+            return;
+        }
 
 //        System.out.println(title+" "+bookAuthor+" "+purchase+" "+sell+" "+quantity);
 
@@ -43,6 +51,7 @@ public class NewBookController {
         stockQuantity.clear();
 
     }
+
 
 
     public void backToHome(ActionEvent actionEvent) throws IOException {

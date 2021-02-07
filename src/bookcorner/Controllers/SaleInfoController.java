@@ -59,11 +59,13 @@ public class SaleInfoController implements Initializable {
 //        Parent saleReportView= FXMLLoader.load(getClass().getResource("../../frontEnd/cashMemo.fxml"));
 //        Scene scene=new Scene(saleReportView);
         createCustomerRecord();
-        // test
-        System.out.println(selectedBooks);
-
+        System.out.println("CUSTOMER data: "+customer.getName()+" "+customer.getAddress()+" "+customer.getID());
+        if(customer.getID().equals("") ||customer.getID()==null||customer.getName()==null||customer.getAddress()==null) return;
+        if(bookList.size()==0) return;
+        customer.saveToDatabase();
         FXMLLoader loader=new FXMLLoader(getClass().getResource("../../frontEnd/cashMemo.fxml"));
         Parent root=loader.load();
+
         Buy buy = new Buy(customer,bookList);
         buy.makePurchase();
         CashMemoController cashMemoController=loader.getController();
@@ -92,11 +94,13 @@ public class SaleInfoController implements Initializable {
         String customerAddress=cust_address.getText();
         System.out.println(customerName+" "+customerContact+" "+customerAddress);
         customer=new Customer(customerContact,customerName,customerAddress);
-        customer.saveToDatabase();
+
     }
 
     public String bookList(ActionEvent actionEvent) {
-        return bookName.getSelectionModel().getSelectedItem().toString();
+        return bookName
+                .getSelectionModel()
+                .getSelectedItem();
     }
 
 
@@ -104,6 +108,8 @@ public class SaleInfoController implements Initializable {
         String book=bookList(actionEvent);
         if(!selectedBooks.contains(book))
         {
+            if(book==null) return;
+            if(book.equals("")) return;
             Book bookDetails=bookRecord.findByID(book);
             selectedBooks.add(book);
 

@@ -53,6 +53,7 @@ public class SalesReportController implements Initializable {
 
     public void onViewReportClick(ActionEvent actionEvent) {
         LocalDate date=datePick.getValue();
+        if(date==null) return;
         int day=date.getDayOfMonth();
         int month=date.getMonthValue();
         int year=date.getYear();
