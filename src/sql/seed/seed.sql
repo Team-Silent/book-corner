@@ -22,7 +22,8 @@ insert into SALES values (7,2,sysdate-1);
 insert into SALES values (8,4,sysdate-1);
 insert into SALES values (9,5,sysdate-1);
 
-/* Some values gives error ...*/
+
+
 insert into book_sales_junction values ('book1 by author1',1,5);
 insert into book_sales_junction values ('book2 by author2',1,3);
 insert into book_sales_junction values ('book3 by author3',1,2);
